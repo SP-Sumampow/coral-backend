@@ -5,3 +5,8 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
+
+### Composer ###
+composer.phar
+/vendor/
+composer.lock
