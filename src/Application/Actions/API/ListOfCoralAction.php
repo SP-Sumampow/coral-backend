@@ -4,11 +4,10 @@ declare(strict_types=1);
 namespace App\Application\Actions\Api;
 
 use App\Application\Actions\Action;
-use App\Domain\User\UserRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 
-class ListOfCoral extends Action
+class ListOfCoralAction extends Action
 {
     public function __construct(LoggerInterface $logger)
     {
