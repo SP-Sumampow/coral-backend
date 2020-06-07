@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 use App\Application\Actions\API\ListOfCoralAction;
+use App\Application\Actions\API\TeamCoralAction;
 use App\Application\Actions\API\CoralAction;
 use App\Application\Actions\Backend\LoginAction;
 use App\Application\Actions\Backend\LogoutAction;
@@ -16,6 +17,7 @@ return function (App $app) {
         ]);
     });
 
+
     // Backend
     $app->group('/backend', function (Group $group) {
         $group->get('', LoginAction::class);
@@ -26,6 +28,7 @@ return function (App $app) {
 
     // API
     $app->group('/api', function (Group $group) {
+        $group->get('/team', TeamCoralAction::class);
         $group->get('/corals', ListOfCoralAction::class);
         $group->get('/coral/{id}', CoralAction::class);
     });
