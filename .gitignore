@@ -9,4 +9,6 @@
 ### Composer ###
 composer.phar
 /vendor/
+/cache/
 composer.lock
+.DS_Store
