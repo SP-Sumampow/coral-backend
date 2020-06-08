@@ -21,36 +21,41 @@ class PagesCoralAction extends Action
     {
         $data = array(
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
+                "id" => 01,
+                "name" => "Explication",
+                "title" => "Explication",
                 "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
+                "id" => 02,
+                "name" => "Introduction",
+                "title" => "Introduction",
                 "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
+                "id" => 03,
+                "name" => "What is coral?",
+                "title" => "Qu'est ce qu'un corail ?",
                 "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
+                "id" => 04,
+                "name" => "Role of the corals",
+                "title" => "Quel est leur rôle ?",
                 "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
+                "id" => 05,
+                "name" => "Actual situation",
+                "title" => "Mais que se passe t-il ?",
                 "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
