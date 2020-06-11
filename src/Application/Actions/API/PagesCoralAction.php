@@ -65,7 +65,7 @@ class PagesCoralAction extends Action
                     "popUp2" => "",
                 ),
                 "picture" =>  null,
-                "video" => null,
+                "video" => "http://167.71.55.113/assets/movies/chapter-1-corals.mp4",
                 "text" => array(
                     "title" => "",
                     "story" => ""
