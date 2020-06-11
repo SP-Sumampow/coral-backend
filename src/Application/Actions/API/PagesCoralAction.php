@@ -21,7 +21,7 @@ class PagesCoralAction extends Action
     {
         $data = array(
             array(
-                "id" => 01,
+                "id" => 1,
                 "name" => "Explication",
                 "picture" =>  null,
                 "title" => "Les coraux, la vie se meurt",
@@ -40,13 +40,13 @@ class PagesCoralAction extends Action
                 )
             ),
             array(
-                "id" => 02,
+                "id" => 2,
                 "name" => "Introduction",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 03,
+                "id" => 3,
                 "name" => "Position of corals on the maps",
                 "picture" =>  null,
                 "video" => null,
@@ -57,7 +57,7 @@ class PagesCoralAction extends Action
                 )
             ),
             array(
-                "id" => 04,
+                "id" => 4,
                 "name" => "What is coral?",
                 "title" => "Qu'est ce qu'un corail ?",
                 "popUps" => array(
@@ -108,7 +108,7 @@ class PagesCoralAction extends Action
                     ),
             ),
             array(
-                "id" => 05,
+                "id" => 5,
                 "name" => "Role of the corals",
                 "title" => "Quel est leur rôle ?",
                 "article1" => array(
@@ -211,7 +211,7 @@ class PagesCoralAction extends Action
                 ),
             ),
             array(
-                "id" => 07,
+                "id" => 7,
                 "name" => "bleaching status",
                 "title" => "Le blanchiment devient régulier",
                 "picture" =>  null,
@@ -261,7 +261,7 @@ class PagesCoralAction extends Action
 
             ),
             array(
-                "id" => 08,
+                "id" => 8,
                 "name" => "",
                 "title" => "93% des coraux ont blanchis",
                 "article" => "",
@@ -269,7 +269,7 @@ class PagesCoralAction extends Action
                 "video" => null
             ),
             array(
-                "id" => 07,
+                "id" => 7,
                 "name" => "bleacheang",
                 "title" => " Aujourd’hui, 50% sont déjà morts ...",
                 "article" => "",
@@ -277,7 +277,7 @@ class PagesCoralAction extends Action
                 "video" => null
             ),
             array(
-                "id" => 07,
+                "id" => 7,
                 "name" => "bleaching",
                 "title" => "Il est encore temps d’agir...",
                 "article" => "",
@@ -285,7 +285,7 @@ class PagesCoralAction extends Action
                 "video" => null
             ),
             array(
-                "id" => 07,
+                "id" => 7,
                 "name" => "bleacheang",
                 "title" => "Soutenez les associations",
                 "article" => "",
@@ -293,7 +293,7 @@ class PagesCoralAction extends Action
                 "video" => null
             ),
             array(
-                "id" => 07,
+                "id" => 7,
                 "name" => "bleacheang",
                 "title" => "Aujourd’hui, 50% sont déjà morts ...",
                 "article" => "",

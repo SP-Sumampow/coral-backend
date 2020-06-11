@@ -13,7 +13,7 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 return function (App $app) {
 
     $app->get('/', function ($request, $response, $args) {
-        return $this->get('view')->render($response, 'hello.twig', [
+        return $this->get('view')->render($response, 'login.twig', [
             'name' => "coucou"
         ]);
     });
@@ -22,7 +22,7 @@ return function (App $app) {
     // Backend
     $app->group('/backend', function (Group $group) {
         $group->get('', LoginAction::class);
-        $group->get('/login', LoginAction::class);
+        $group->post('/login', LoginAction::class);
         $group->get('/logout', LogoutAction::class);
     });
 

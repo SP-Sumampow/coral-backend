@@ -1,0 +1,25 @@
+{
+  "name": "coral-backend",
+  "version": "1.0.0",
+  "description": "[![Coverage Status](https://coveralls.io/repos/github/slimphp/Slim-Skeleton/badge.svg?branch=master)](https://coveralls.io/github/slimphp/Slim-Skeleton?branch=master)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build-css": "sass --watch scss:public/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://SP-Sumampow@github.com/SP-Sumampow/coral-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SP-Sumampow/coral-backend/issues"
+  },
+  "homepage": "https://github.com/SP-Sumampow/coral-backend#readme"
+}

@@ -37,7 +37,8 @@ $container = $containerBuilder->build();
 // Set view in Container
 $container->set('view', function() {
     return Twig::create(__DIR__ . '/../templates',
-        ['cache' => __DIR__ . '/../cache']);
+        //['cache' => __DIR__ . '/../cache']);
+        ['cache' => false]);
 });
 
 // Instantiate the app
