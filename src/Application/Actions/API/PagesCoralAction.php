@@ -23,47 +23,280 @@ class PagesCoralAction extends Action
             array(
                 "id" => 01,
                 "name" => "Explication",
-                "title" => "Explication",
-                "article" => "bla bla bla",
                 "picture" =>  null,
-                "video" => null
+                "title" => "Les coraux, la vie se meurt",
+                "video" => null,
+                "textDisclame" => array(
+                    "title" => "Attention",
+                    "text" => "Ce site a été réalisé à des fins pédagogiques dans le cadre du cursus Bachelor de l’école HETIC.  Les contenus présentés n'ont pas fait l'objet d'une demande de droit d'utilisation.  Ce site ne sera en aucun cas exploité à des fins commerciales et ne sera pas publié."
+                ),
+                "textInstruction" => array(
+                    "title" => "Plongez à la découverte des coraux",
+                    "textINstruction" => array(
+                        "instructionAudio" => "Pour une immersion totale à travers ce webdocumentaire, 
+                            il est préférable de porter un casque audio",
+                        "instructionControls" => "Utilisez le scroll ou les flèches du clavier pour naviguer"
+                    )
+                )
             ),
             array(
                 "id" => 02,
                 "name" => "Introduction",
-                "title" => "Introduction",
-                "article" => "bla bla bla",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
                 "id" => 03,
-                "name" => "What is coral?",
-                "title" => "Qu'est ce qu'un corail ?",
-                "article" => "bla bla bla",
+                "name" => "Position of corals on the maps",
                 "picture" =>  null,
-                "video" => null
+                "video" => null,
+                "question" => "D’après vous, quel sont les endroit où il y a une masse de coraux ? ",
+                "text" => array(
+                    "title" => "En Australie",
+                    "text" => ""
+                )
             ),
             array(
                 "id" => 04,
-                "name" => "Role of the corals",
-                "title" => "Quel est leur rôle ?",
-                "article" => "bla bla bla",
+                "name" => "What is coral?",
+                "title" => "Qu'est ce qu'un corail ?",
+                "popUps" => array(
+                    "popUp1" => "",
+                    "popUp2" => "",
+                ),
                 "picture" =>  null,
-                "video" => null
+                "video" => null,
+                "text" => array(
+                    "title" => "",
+                    "story" => ""
+                ),
+                "quiz" => array(
+                    "question" => "",
+                    "answer"  => array(
+                        "name" => "answer1",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                        array(
+                            "name" => "answer1",
+                            "text" => "",
+                             "state" => null,
+                        ),
+                        array(
+                            "name" => "answer2",
+                            "text" => "",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer3",
+                            "text" => "",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer4",
+                            "text" => "",
+                            "state" => null,
+                        ),
+                ),
+                "quizAnswer" => array(
+                    "title" => "Vrai",
+                    "text" => "",
+                    ),
+                    array(
+                        "title" => "Faux",
+                        "text" => "",
+                    ),
             ),
             array(
                 "id" => 05,
+                "name" => "Role of the corals",
+                "title" => "Quel est leur rôle ?",
+                "article1" => array(
+                    "title" => "",
+                    "text" => "",
+                ),
+                "picture" =>  null,
+                "video" => null,
+                "quiz" => array(
+                    "question" => "",
+                    "answer"  => array(
+                        "name" => "answer1",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer2",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer3",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer4",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                ),
+                "quizAnswer" => array(
+                    "title" => "Vrai",
+                    "text" => "",
+                ),
+                array(
+                    "title" => "Faux",
+                    "text" => "",
+                ),
+            ),
+            array(
+                "id" => 06,
                 "name" => "Actual situation",
                 "title" => "Mais que se passe t-il ?",
-                "article" => "bla bla bla",
+                "popUps" =>
+                    array(
+                    "name" => "pop up1",
+                    "title" => "Le réchauffemnt des océans",
+                    "text" => "Le réchauffement des océans est le facteur principal du blanchiment des coraux.
+                     Si les tempérratures de surface des océans continuent d’augmenter,
+                      la fréquence et la gravité du blanchiment des coraux va également augmenter, 
+                          affectant probablement la capacité des récifs coralliens à s’addapter et à fournir la plupart des services que nous leur demandons"
+                    ),
+                    array(
+                        "name" => "pop up2",
+                        "title" => "L’acidification des océan",
+                        "text" => "Le dioxyde de carbone présent dans l’atmosphère est absorbé par les océans. 
+                        Ceci cause la baisse du pH des océans, entraînant l’acidification de ces derniers. 
+                        Cette diminution du pH a des conséquences négatives, surtout pour les organismes carbonatés océaniques tels que les récifs que les récifs corallliens. "
+                    ),
+                    array(
+                        "name" => "pop up3",
+                        "title" => "L’élévation du niveaux des océans",
+                        "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté,
+                         même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique.
+                          Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
+                    ),
+                "picture" =>  null,
+                "video" => null,
+                "quiz" => array(
+                    "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                    "answer"  => array(
+                        "name" => "answer1",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer2",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer3",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer4",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                ),
+                "quizAnswer" => array(
+                    "title" => "Vrai",
+                    "text" => "",
+                ),
+                array(
+                    "title" => "Faux",
+                    "text" => "",
+                ),
+            ),
+            array(
+                "id" => 07,
+                "name" => "bleaching status",
+                "title" => "Le blanchiment devient régulier",
+                "picture" =>  null,
+                "video" => null,
+                "article" => array(
+                    "title" => "Le blanchissement",
+                    "text" => "La principale cause de blanchiment est un changement de la température de l'eau de mer supérieur ou inférieur à la normale.
+                        Les coraux se développent bien ou de manière optimale en mer tropicale à une température de 28 à 290 C. 
+
+                        S'il y a une augmentation de la température de 2 ou 3° C au-dessus ou au-dessous de la normale dans une période comprise entre 1 - 2 semaines,
+                         le corail montrera des signes de blanchissement. 
+                         Si la température augmente ou diminue pendant un mois, toutes les colonies de coraux, 
+                         les coraux mous, les anémones et les zoanthides deviendront blancs et mourront si la température augmente 
+                         ou diminue jusqu'à ce qu'elle atteigne la sixième semaine."
+                ),
+                "quiz" => array(
+                    "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                    "answer"  => array(
+                        "name" => "answer1",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer2",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer3",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer4",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                ),
+                "quizAnswer" => array(
+                    "title" => "Vrai",
+                    "text" => "",
+                ),
+                array(
+                    "title" => "Faux",
+                    "text" => "",
+                ),
+
+            ),
+            array(
+                "id" => 08,
+                "name" => "",
+                "title" => "93% des coraux ont blanchis",
+                "article" => "",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 1,
-                "title" => "Sentiany Priska Sumampow",
-                "article" => "bla bla bla",
+                "id" => 07,
+                "name" => "bleacheang",
+                "title" => " Aujourd’hui, 50% sont déjà morts ...",
+                "article" => "",
+                "picture" =>  null,
+                "video" => null
+            ),
+            array(
+                "id" => 07,
+                "name" => "bleaching",
+                "title" => "Il est encore temps d’agir...",
+                "article" => "",
+                "picture" =>  null,
+                "video" => null
+            ),
+            array(
+                "id" => 07,
+                "name" => "bleacheang",
+                "title" => "Soutenez les associations",
+                "article" => "",
+                "picture" =>  null,
+                "video" => null
+            ),
+            array(
+                "id" => 07,
+                "name" => "bleacheang",
+                "title" => "Aujourd’hui, 50% sont déjà morts ...",
+                "article" => "",
                 "picture" =>  null,
                 "video" => null
             )
