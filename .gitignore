@@ -6,6 +6,8 @@
 !/logs/README.md
 .phpunit.result.cache
 
+/public/assets/*
+
 ### Composer ###
 composer.phar
 /vendor/
