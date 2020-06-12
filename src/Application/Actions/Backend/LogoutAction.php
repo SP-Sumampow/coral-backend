@@ -19,9 +19,9 @@ class LogoutAction extends Action
      */
     protected function action(): Response
     {
-        $data = array(
-            'logout' => true
-        );
-        return $this->respondWithData($data);
+        if (isset($_SESSION["userId"])) {
+            $_SESSION["userId"] = null;
+            return $this->response->withRedirect('/', 301);
+        }
     }
 }

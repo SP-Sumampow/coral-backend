@@ -9,11 +9,16 @@ use App\Application\Actions\Backend\LoginAction;
 use App\Application\Actions\Backend\LogoutAction;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use Slim\Views\Twig;
 
 return function (App $app) {
 
     $app->get('/', function ($request, $response, $args) {
-        return $this->get('view')->render($response, 'login.twig', [
+        if (isset($_SESSION["userId"])) {
+            return $response->withRedirect('/backend', 301);
+        }
+        $view = Twig::fromRequest($request);
+        return $view->render($response, 'login.twig', [
             'name' => "coucou"
         ]);
     });

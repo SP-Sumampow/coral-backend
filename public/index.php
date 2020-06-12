@@ -9,7 +9,7 @@ use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
-
+session_start();
 require __DIR__ . '/../vendor/autoload.php';
 
 // Instantiate PHP-DI ContainerBuilder
@@ -34,24 +34,30 @@ $repositories($containerBuilder);
 // Build PHP-DI Container instance
 $container = $containerBuilder->build();
 
+// Session in Container
+
 // Set view in Container
-$container->set('view', function() {
-    return Twig::create(__DIR__ . '/../templates',
-        //['cache' => __DIR__ . '/../cache']);
-        ['cache' => false]);
-});
+//$container->set('view', function() {
+//    return Twig::create(__DIR__ . '/../templates',
+//        //['cache' => __DIR__ . '/../cache']);
+//        ['cache' => false]);
+//});
 
 // Instantiate the app
 AppFactory::setContainer($container);
+// Create Twig
+$twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
+
 $app = AppFactory::create();
+
+// Add Twig-View Middleware
+$app->add(TwigMiddleware::create($app, $twig));
+
 $callableResolver = $app->getCallableResolver();
 
 // Register middleware
 $middleware = require __DIR__ . '/../app/middleware.php';
 $middleware($app);
-
-// Add Twig-View Middleware
-$app->add(TwigMiddleware::createFromContainer($app));
 
 // Register routes
 $routes = require __DIR__ . '/../app/routes.php';
