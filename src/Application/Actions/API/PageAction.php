@@ -107,6 +107,7 @@ class PageAction extends Action
                              "state" => null,
                          ),
                      ),
+
                  ),
                  "quizAnswer" => array(
                      "title" => "Vrai",
@@ -116,7 +117,7 @@ class PageAction extends Action
                      "title" => "Faux",
                      "text" => "",
                  ),
-             ),
+             );
          };
 
         return $this->respondWithData($data);
