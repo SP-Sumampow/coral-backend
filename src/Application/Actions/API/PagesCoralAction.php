@@ -50,52 +50,51 @@ class PagesCoralAction extends Action
                 "picture" =>  null,
                 "video" => null,
                 "question" => "D’après vous, quel sont les endroit où il y a une masse de coraux ? ",
-                "text" => array(
-                    "title" => "En Australie",
-                    "text" => ""
-                )
             ),
             array(
                 "id" => 4,
                 "name" => "What is coral?",
                 "title" => "Qu'est ce qu'un corail ?",
                 "popUps" => array(
-                    "popUp1" => "",
-                    "popUp2" => "",
+                    "popUp1" => array(
+                        "title" => "La belle amitiée entre le corail et l’algue :",
+                        "article" => "Le corail est un organisme qui vit en symbiose avec une micro-algue, la zooxantelle (appartenant au genre Symbiodinium), c’est d’ailleurs grâce a celle-ci que le corail tire ses si belles couleurs attractives.  Un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre. Mais lorsque le corail stresse, parce que la température de l'eau augmente, par exemple, la symbiose est rompue.  Les micro-algues s'échappent et le corail blanchit : si la rupture dure trop longtemps, le corail finit par mourir de \" faim \" et à terme devient gris foncé.",
+                    ),
+                    "popUp2" => array(
+                        "title" => "Animal, minéral ou végétal?",
+                        "article" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!"
+                    ),
                 ),
                 "picture" =>  null,
                 "video" => "http://167.71.55.113/assets/movies/chapter-1-corals.mp4",
                 "text" => array(
-                    "title" => "",
-                    "story" => ""
+                    "title" => "La belle amitié entre le corail et l’algue :",
+                    "story" => "Le corail est un organisme qui vit en symbiose avec une micro-algue, la zooxantelle (appartenant au genre Symbiodinium). C’est d’ailleurs grâce a celle-ci que le corail tire ses si belles couleurs attractives. \r\nComme tous les animaux, les polypes de corail mangent. Ils capturent leurs proies à l'aide de crochets microscopiques libérés de leurs tentacules. Mais la plupart de l'énergie du corail provient d'algues connues sous le nom de zooxanthelles qui résident dans les tissus du polype, convertissant la lumière du soleil en sucres riches en énergie que les coraux peuvent absorber comme combustible.\r\nUn centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre. Mais lorsque le corail stresse, parce que la température de l'eau augmente, par exemple, la symbiose est rompue.  Les micro-algues s'échappent et le corail blanchit : si la rupture dure trop longtemps, le corail finit par mourir de \" faim \" et à terme devient gris foncé."
                 ),
                 "quiz" => array(
-                    "question" => "",
+                    "question" => "A quel reigne appartient le corail?",
                     "answer"  => array(
-                        "name" => "answer1",
-                        "text" => "",
-                        "state" => null,
-                    ),
                         array(
                             "name" => "answer1",
-                            "text" => "",
-                             "state" => null,
+                            "text" => "A: Végétal",
+                            "state" => null,
                         ),
                         array(
                             "name" => "answer2",
-                            "text" => "",
+                            "text" => "B: Animal",
                             "state" => null,
                         ),
                         array(
                             "name" => "answer3",
-                            "text" => "",
+                            "text" => "C: Minéal",
                             "state" => null,
                         ),
                         array(
                             "name" => "answer4",
-                            "text" => "",
+                            "text" => "D: Les trois",
                             "state" => null,
                         ),
+                    ),
                 ),
                 "quizAnswer" => array(
                     "title" => "Vrai",
