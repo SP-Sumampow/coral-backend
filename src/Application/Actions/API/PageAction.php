@@ -56,7 +56,7 @@ class PageAction extends Action
                  "name" => "Position of corals on the maps",
                  "picture" =>  null,
                  "video" => null,
-                 "question" => "D’après vous, quel sont les endroit où il y a une masse de coraux ? ",
+                 "question" => "D’après vous, où se trouvent les plus grands recifs coraliens ?",
                  "text" => array(
                      "title" => "En Australie",
                      "text" => ""
