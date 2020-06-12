@@ -48,7 +48,19 @@ class PageAction extends Action
                  "id" => 2,
                  "name" => "Introduction",
                  "picture" =>  null,
-                 "video" => null
+                 "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4"
+             );
+         } else if ($coralId == 3) {
+             $data = array(
+                 "id" => 3,
+                 "name" => "Position of corals on the maps",
+                 "picture" =>  null,
+                 "video" => null,
+                 "question" => "D’après vous, quel sont les endroit où il y a une masse de coraux ? ",
+                 "text" => array(
+                     "title" => "En Australie",
+                     "text" => ""
+                 )
              );
          }
 

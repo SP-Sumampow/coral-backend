@@ -43,7 +43,7 @@ class PagesCoralAction extends Action
                 "id" => 2,
                 "name" => "Introduction",
                 "picture" =>  null,
-                "video" => null
+                "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4"
             ),
             array(
                 "id" => 3,
