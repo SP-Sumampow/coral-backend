@@ -70,7 +70,7 @@ class PageAction extends Action
                  "popUps" => array(
                      "popUp1" => array(
                          "title" => "La belle amitiée entre le corail et l’algue :",
-                         "article" => "Le corail est un organisme qui vit en symbiose avec une micro-algue, la zooxantelle (appartenant au genre Symbiodinium), c’est d’ailleurs grâce a celle-ci que le corail tire ses si belles couleurs attractives.  Un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre. Mais lorsque le corail stresse, parce que la température de l'eau augmente, par exemple, la symbiose est rompue.  Les micro-algues s'échappent et le corail blanchit : si la rupture dure trop longtemps, le corail finit par mourir de \" faim \" et à terme devient gris foncé.",
+                         "article" => "Le corail est un organisme qui vit en symbiose avec une micro-algue, la zooxantelle (appartenant au genre Symbiodinium). C’est d’ailleurs grâce a celle-ci que le corail tire ses si belles couleurs attractives.\r\nComme tous les animaux, les polypes de corail mangent. Ils capturent leurs proies à l'aide de crochets microscopiques libérés de leurs tentacules. Mais la plupart de l'énergie du corail provient d'algues connues sous le nom de zooxanthelles qui résident dans les tissus du polype, convertissant la lumière du soleil en sucres riches en énergie que les coraux peuvent absorber comme combustible.\r\nUn centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre. Mais lorsque le corail stresse, parce que la température de l'eau augmente, par exemple, la symbiose est rompue.  Les micro-algues s'échappent et le corail blanchit : si la rupture dure trop longtemps, le corail finit par mourir de \" faim \" et à terme devient gris foncé.",
                      ),
                      "popUp2" => array(
                          "title" => "Animal, minéral ou végétal?",
@@ -79,10 +79,6 @@ class PageAction extends Action
                  ),
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/chapter-1-corals.mp4",
-                 "text" => array(
-                     "title" => "La belle amitié entre le corail et l’algue :",
-                     "story" => "Le corail est un organisme qui vit en symbiose avec une micro-algue, la zooxantelle (appartenant au genre Symbiodinium). C’est d’ailleurs grâce a celle-ci que le corail tire ses si belles couleurs attractives. \r\nComme tous les animaux, les polypes de corail mangent. Ils capturent leurs proies à l'aide de crochets microscopiques libérés de leurs tentacules. Mais la plupart de l'énergie du corail provient d'algues connues sous le nom de zooxanthelles qui résident dans les tissus du polype, convertissant la lumière du soleil en sucres riches en énergie que les coraux peuvent absorber comme combustible.\r\nUn centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre. Mais lorsque le corail stresse, parce que la température de l'eau augmente, par exemple, la symbiose est rompue.  Les micro-algues s'échappent et le corail blanchit : si la rupture dure trop longtemps, le corail finit par mourir de \" faim \" et à terme devient gris foncé."
-                 ),
                  "quiz" => array(
                      "question" => "A quel reigne appartient le corail?",
                      "answer"  => array(
