@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
-class BackOfficeUsersAction extends Action
+class BackOfficeUserAction extends Action
 {
 
     public function __construct(LoggerInterface $logger)
@@ -25,7 +25,7 @@ class BackOfficeUsersAction extends Action
         $view = Twig::fromRequest($this->request);
 
         if (isset($_SESSION["userId"])) {
-            return $view->render($this->response, 'users-BackOffice.twig', [
+            return $view->render($this->response, 'user-BackOffice.twig', [
                 'name' => "coucou"
             ]);
         }
