@@ -33,8 +33,7 @@ class PagesCoralAction extends Action
                 "textInstruction" => array(
                     "title" => "Plongez à la découverte des coraux",
                     "textINstruction" => array(
-                        "instructionAudio" => "Pour une immersion totale à travers ce webdocumentaire, 
-                            il est préférable de porter un casque audio",
+                        "instructionAudio" => "Pour une immersion totale à travers ce webdocumentaire,\r\n il est préférable de porter un casque audio",
                         "instructionControls" => "Utilisez le scroll ou les flèches du clavier pour naviguer"
                     )
                 )
@@ -263,43 +262,78 @@ class PagesCoralAction extends Action
             array(
                 "id" => 8,
                 "name" => "",
-                "title" => "93% des coraux ont blanchis",
+                "title" => "Aujourd’hui, 50% sont déjà morts ...",
                 "article" => "",
                 "picture" =>  null,
                 "video" => null
             ),
             array(
-                "id" => 7,
+                "id" => 9,
                 "name" => "bleacheang",
                 "title" => " Aujourd’hui, 50% sont déjà morts ...",
-                "article" => "",
                 "picture" =>  null,
-                "video" => null
+                "video" => null,
+                "article" => array(
+                    "title" => "Une autre concéquence",
+                    "text" => "L’inpact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.<br/>En effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.<br/>Pour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
+                    "picture1" => null,
+                    "picture2" => null,
+                ),
+                "quiz" => array(
+                    "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                    "answer"  => array(
+                        "name" => "answer1",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer2",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer3",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                    array(
+                        "name" => "answer4",
+                        "text" => "",
+                        "state" => null,
+                    ),
+                ),
+                "quizAnswer" => array(
+                    "title" => "Vrai",
+                    "text" => "",
+                ),
+                array(
+                    "title" => "Faux",
+                    "text" => "",
+                ),
             ),
             array(
-                "id" => 7,
-                "name" => "bleaching",
+                "id" => 10,
+                "name" => "what we can do",
                 "title" => "Il est encore temps d’agir...",
-                "article" => "",
                 "picture" =>  null,
-                "video" => null
+                "video" => null,
+                "article" => array(
+                    "title" => "Richesse exceptionnelle d’un récif coralien",
+                    "text" => "",
+                    "picture1" => null,
+                    "picture2" => null,
+                    "picture3" => null,
+                    "picture4" => null,
+                ),
             ),
             array(
-                "id" => 7,
-                "name" => "bleacheang",
+                "id" => 10,
+                "name" => "associations",
                 "title" => "Soutenez les associations",
                 "article" => "",
                 "picture" =>  null,
                 "video" => null
             ),
-            array(
-                "id" => 7,
-                "name" => "bleacheang",
-                "title" => "Aujourd’hui, 50% sont déjà morts ...",
-                "article" => "",
-                "picture" =>  null,
-                "video" => null
-            )
         );
         return $this->respondWithData($data);
     }
