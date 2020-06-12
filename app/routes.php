@@ -7,6 +7,7 @@ use App\Application\Actions\API\PagesCoralAction;
 use App\Application\Actions\API\CoralAction;
 use App\Application\Actions\Backend\LoginAction;
 use App\Application\Actions\Backend\LogoutAction;
+use App\Application\Actions\API\PageAction;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
@@ -38,5 +39,6 @@ return function (App $app) {
         $group->get('/pages', PagesCoralAction::class);
         $group->get('/corals', ListOfCoralAction::class);
         $group->get('/coral/{id}', CoralAction::class);
+        $group->get('/page/{id}', PageAction::class);
     });
 };
