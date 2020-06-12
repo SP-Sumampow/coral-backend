@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\Actions\Backend;
+namespace App\Application\Actions\BackOffice;
 
 use App\Application\Actions\Action;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -32,10 +32,9 @@ class LoginAction extends Action
     {
         $view = Twig::fromRequest($this->request);
 
+
         if (isset($_SESSION["userId"])) {
-            return $view->render($this->response, 'backoffice.twig', [
-                'name' => "coucou"
-            ]);
+            return $this->response->withRedirect('/', 301);
         }
 
         $data = $this->request->getParsedBody();
@@ -46,9 +45,7 @@ class LoginAction extends Action
             // login
             if ($this->isLogin($email, $password)) {
                 $_SESSION["userId"] = "1";
-                return $view->render($this->response, 'backoffice.twig', [
-                    'name' => "coucou"
-                ]);
+                return $this->response->withRedirect('/', 301);
             } else {
                 $data = ['error' => "Login doesnt exist"];
                 return $this->respondWithData($data,401 );
