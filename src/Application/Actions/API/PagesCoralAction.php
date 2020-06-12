@@ -110,41 +110,80 @@ class PagesCoralAction extends Action
                 "name" => "Role of the corals",
                 "title" => "Quel est leur rôle ?",
                 "article1" => array(
-                    "title" => "",
-                    "text" => "",
+                    "title" => "L’incroyable “Triangle de Corail”",
+                    "text" => "Le Triangle de corail est l’épicentre de la biodiversité marine de la planète.  Il possède plus de biodiversité que partout ailleurs dans le monde: 76% des espèces de coraux, et 56% des poissons de récifs coralliens dans la région Indo-Pacifique.  L’épicentre de cette diversité corallienne se trouve dans la péninsule de Papouasie indonésienne. Il est fréquenté par la baleine bleue, les dauphins, les marsouins, et le dugong en voie de disparition.",
                 ),
                 "picture" =>  null,
                 "video" => null,
-                "quiz" => array(
-                    "question" => "",
+                "quiz1" => array(
+                    "question" => "Les récifs coraliens représentent 0.2 de la surface martime, mais quel part de la biodiversité marine en %?",
                     "answer"  => array(
-                        "name" => "answer1",
-                        "text" => "",
-                        "state" => null,
-                    ),
-                    array(
-                        "name" => "answer2",
-                        "text" => "",
-                        "state" => null,
-                    ),
-                    array(
-                        "name" => "answer3",
-                        "text" => "",
-                        "state" => null,
-                    ),
-                    array(
-                        "name" => "answer4",
-                        "text" => "",
-                        "state" => null,
+                        array(
+                            "name" => "answer1",
+                            "text" => "A: 10%",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer2",
+                            "text" => "B: 20%",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer3",
+                            "text" => "C: 30%",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer4",
+                            "text" => "D: 40%",
+                            "state" => null,
+                        ),
                     ),
                 ),
-                "quizAnswer" => array(
-                    "title" => "Vrai",
-                    "text" => "",
+                "quizAnswer1" => array(
+                    array(
+                        "title" => "Vrai",
+                        "text" => "",
+                    ),
+                    array(
+                        "title" => "Faux",
+                        "text" => "",
+                    ),
                 ),
-                array(
-                    "title" => "Faux",
-                    "text" => "",
+                "quiz2" => array(
+                    "question" => "Dans quel région d’Australie se situe la grande barrière?",
+                    "answer"  => array(
+                        array(
+                            "name" => "answer1",
+                            "text" => "A: New South Wales",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer2",
+                            "text" => "B: Victoria",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer3",
+                            "text" => "C: Northern Territories",
+                            "state" => null,
+                        ),
+                        array(
+                            "name" => "answer4",
+                            "text" => "D: Queensland",
+                            "state" => null,
+                        ),
+                    ),
+                ),
+                "quizAnswer2" => array(
+                    array(
+                        "title" => "Vrai",
+                        "text" => "",
+                    ),
+                    array(
+                        "title" => "Faux",
+                        "text" => "",
+                    ),
                 ),
             ),
             array(
