@@ -5,10 +5,10 @@ use App\Application\Actions\API\ListOfCoralAction;
 use App\Application\Actions\API\TeamCoralAction;
 use App\Application\Actions\API\PagesCoralAction;
 use App\Application\Actions\API\CoralAction;
-use App\Application\Actions\BackOffice\LoginAction;
-use App\Application\Actions\BackOffice\LogoutAction;
+use App\Application\Actions\BackOffice\BackOfficeLoginAction;
+use App\Application\Actions\BackOffice\BackOfficeLogoutAction;
 use App\Application\Actions\API\PageAction;
-use App\Application\Actions\BackOffice\HomeBackOfficeAction;
+use App\Application\Actions\BackOffice\BackOfficeHomeAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeUsersAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeUserAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePageAction;
@@ -22,17 +22,15 @@ return function (App $app) {
     $app->get('/', function ($request, $response, $args) {
         if (isset($_SESSION["userId"])) {
             return $response->withRedirect('/backoffice', 301);
+        } else {
+            return $response->withRedirect('/backoffice/login', 301);
         }
-        $view = Twig::fromRequest($request);
-        return $view->render($response, 'login.twig', [
-            'name' => "coucou"
-        ]);
     });
 
 
     // Backend
     $app->group('/backoffice', function (Group $group) {
-        $group->get('', HomeBackOfficeAction::class);
+        $group->get('', BackOfficeHomeAction::class);
 
         // USERS CRUD
         $group->get('/users', BackOfficeUsersAction::class);
@@ -49,8 +47,9 @@ return function (App $app) {
         $group->delete('/page/{id}', BackOfficePageAction::class);
 
         // SESSIONS
-        $group->post('/login', LoginAction::class);
-        $group->get('/logout', LogoutAction::class);
+        $group->get('/login', BackOfficeLoginAction::class);
+        $group->post('/login', BackOfficeLoginAction::class);
+        $group->get('/logout', BackOfficeLogoutAction::class);
     });
 
 

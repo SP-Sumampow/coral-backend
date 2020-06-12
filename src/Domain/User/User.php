@@ -8,14 +8,14 @@ use JsonSerializable;
 class User implements JsonSerializable
 {
     /**
-     * @var int|null
+     * @var int
      */
     private $id;
 
     /**
      * @var string
      */
-    private $username;
+    private $email;
 
     /**
      * @var string
@@ -28,21 +28,28 @@ class User implements JsonSerializable
     private $lastName;
 
     /**
-     * @param int|null  $id
-     * @param string    $username
-     * @param string    $firstName
-     * @param string    $lastName
+     * @var string
      */
-    public function __construct(?int $id, string $username, string $firstName, string $lastName)
+    private $description;
+
+    /**
+     * @param int $id
+     * @param string $email
+     * @param string $firstName
+     * @param string $lastName
+     * @param string $description
+     */
+    public function __construct(int $id, string $email, string $firstName, string $lastName, string $description)
     {
         $this->id = $id;
-        $this->username = strtolower($username);
+        $this->email = strtolower(email);
         $this->firstName = ucfirst($firstName);
         $this->lastName = ucfirst($lastName);
+        $this->description = ucfirst(description);
     }
 
     /**
-     * @return int|null
+     * @return int
      */
     public function getId(): ?int
     {
@@ -52,9 +59,9 @@ class User implements JsonSerializable
     /**
      * @return string
      */
-    public function getUsername(): string
+    public function getEmail(): string
     {
-        return $this->username;
+        return $this->email;
     }
 
     /**
@@ -74,15 +81,24 @@ class User implements JsonSerializable
     }
 
     /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
      * @return array
      */
     public function jsonSerialize()
     {
         return [
             'id' => $this->id,
-            'username' => $this->username,
+            'email' => $this->email,
             'firstName' => $this->firstName,
             'lastName' => $this->lastName,
+            'description' => $this->description,
         ];
     }
 }

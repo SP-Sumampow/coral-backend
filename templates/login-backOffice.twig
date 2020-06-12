@@ -11,8 +11,14 @@
                 <h1 class="h3 mb-3 font-weight-normal">Back office</h1>
             </div>
 
+            {% if error is defined %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
             <div class="form-label-group">
-                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" value="priska@lalaland.fr">
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" value="priska@lalaland.frf">
                 <label for="inputEmail">Email address</label>
             </div>
 
@@ -21,7 +27,7 @@
                 <label for="inputPassword">Password</label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
+            <p class="mt-5 mb-3 text-muted text-center">© Coral 2020</p>
         </form>
     </section>
 {% endblock %}
