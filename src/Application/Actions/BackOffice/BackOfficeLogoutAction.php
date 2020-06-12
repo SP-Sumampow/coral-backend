@@ -7,7 +7,7 @@ use App\Application\Actions\Action;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 
-class LogoutAction extends Action
+class BackOfficeLogoutAction extends Action
 {
     public function __construct(LoggerInterface $logger)
     {

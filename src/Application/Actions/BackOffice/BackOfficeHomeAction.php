@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
-class HomeBackOfficeAction extends Action
+class BackOfficeHomeAction extends Action
 {
 
     public function __construct(LoggerInterface $logger)

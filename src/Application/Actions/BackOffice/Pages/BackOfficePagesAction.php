@@ -28,6 +28,8 @@ class BackOfficePagesAction extends Action
             return $view->render($this->response, 'pages-BackOffice.twig', [
                 'name' => "coucou"
             ]);
+        } else {
+            return $this->response->withRedirect('/', 301);
         }
     }
 }

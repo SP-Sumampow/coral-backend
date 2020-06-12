@@ -42,10 +42,10 @@ class User implements JsonSerializable
     public function __construct(int $id, string $email, string $firstName, string $lastName, string $description)
     {
         $this->id = $id;
-        $this->email = strtolower(email);
-        $this->firstName = ucfirst($firstName);
-        $this->lastName = ucfirst($lastName);
-        $this->description = ucfirst(description);
+        $this->email = $email;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->description = $description;
     }
 
     /**
