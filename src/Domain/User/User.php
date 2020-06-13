@@ -20,12 +20,12 @@ class User implements JsonSerializable
     /**
      * @var string
      */
-    public $firstName;
+    public $firstname;
 
     /**
      * @var string
      */
-    public $lastName;
+    public $lastname;
 
     /**
      * @var string
@@ -48,9 +48,10 @@ class User implements JsonSerializable
     {
         $this->id = $id;
         $this->email = $email;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->password = "nasinasigoreng";
+        $this->firstname = $firstName;
+        $this->lastname = $lastName;
+        $salt = $_ENV['SALT_CORAL'];
+        $this->password = sha1("nasinasigoreng" . $salt);
         $this->description = $description;
     }
 
@@ -62,8 +63,8 @@ class User implements JsonSerializable
         return [
             'id' => $this->id,
             'email' => $this->email,
-            'firstName' => $this->firstName,
-            'lastName' => $this->lastName,
+            'firstName' => $this->firstname,
+            'lastName' => $this->lastname,
             'description' => $this->description,
         ];
     }
