@@ -56,11 +56,9 @@ class PageAction extends Action
                  "name" => "Position of corals on the maps",
                  "picture" =>  null,
                  "video" => null,
-                 "question" => "D’après vous, où se trouvent les plus grands recifs coraliens ?",
-                 "text" => array(
-                     "title" => "En Australie",
-                     "text" => ""
-                 )
+                 "title1" => "Bienvenue dans la mer de Corail",
+                 "title2" => "Visitesz les recifs",
+                 "text" => "Découvrez la Grande Barrière vue du ciel !",
              );
          } else if ($coralId == 4) {
              $data =  array(
@@ -198,7 +196,69 @@ class PageAction extends Action
                      ),
                  ),
              );
-         }
+         } else if ($coralId == 6 ) {
+             $data = array(
+                 "id" => 06,
+                 "name" => "Actual situation",
+                 "title" => "Mais que se passe t-il ?",
+                 "popUps" =>
+                     array(
+                         "name" => "pop up1",
+                         "title" => "Le réchauffemnt des océans",
+                         "text" => "Le réchauffement des océans est le facteur principal du blanchiment des coraux.
+                     Si les tempérratures de surface des océans continuent d’augmenter,
+                      la fréquence et la gravité du blanchiment des coraux va également augmenter, 
+                          affectant probablement la capacité des récifs coralliens à s’addapter et à fournir la plupart des services que nous leur demandons"
+                     ),
+                 array(
+                     "name" => "pop up2",
+                     "title" => "L’acidification des océan",
+                     "text" => "Le dioxyde de carbone présent dans l’atmosphère est absorbé par les océans. 
+                        Ceci cause la baisse du pH des océans, entraînant l’acidification de ces derniers. 
+                        Cette diminution du pH a des conséquences négatives, surtout pour les organismes carbonatés océaniques tels que les récifs que les récifs corallliens. "
+                 ),
+                 array(
+                     "name" => "pop up3",
+                     "title" => "L’élévation du niveaux des océans",
+                     "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté,
+                         même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique.
+                          Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
+                 ),
+                 "picture" =>  null,
+                 "video" => null,
+                 "quiz" => array(
+                     "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                     "answer"  => array(
+                         "name" => "answer1",
+                         "text" => "La surpêche",
+                         "state" => null,
+                     ),
+                     array(
+                         "name" => "answer2",
+                         "text" => "La déforestation",
+                         "state" => null,
+                     ),
+                     array(
+                         "name" => "answer3",
+                         "text" => "Le réchauffement climatique",
+                         "state" => null,
+                     ),
+                     array(
+                         "name" => "answer4",
+                         "text" => "La hausse du niveau de la mer",
+                         "state" => null,
+                     ),
+                 ),
+                 "quizAnswer" => array(
+                     "title" => "Vrai",
+                     "text" => "",
+                 ),
+                 array(
+                     "title" => "Faux",
+                     "text" => "",
+                 ),
+             ),
+         };
 
         return $this->respondWithData($data);
     }

@@ -219,22 +219,22 @@ class PagesCoralAction extends Action
                     "question" => "Quel est la principale cause du blacnshissement des coraux?",
                     "answer"  => array(
                         "name" => "answer1",
-                        "text" => "",
+                        "text" => "La surpêche",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer2",
-                        "text" => "",
+                        "text" => "La déforestation",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer3",
-                        "text" => "",
+                        "text" => "Le réchauffement climatique",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer4",
-                        "text" => "",
+                        "text" => "La hausse du niveau de la mer",
                         "state" => null,
                     ),
                 ),
