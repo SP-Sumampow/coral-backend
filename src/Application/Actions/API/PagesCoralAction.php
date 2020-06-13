@@ -292,44 +292,36 @@ class PagesCoralAction extends Action
             ),
             array(
                 "id" => 8,
-                "name" => "",
-                "title" => "Aujourd’hui, 50% sont déjà morts ...",
-                "article" => "",
-                "picture" =>  null,
-                "video" => null
-            ),
-            array(
-                "id" => 9,
                 "name" => "bleacheang",
                 "title" => " Aujourd’hui, 50% sont déjà morts ...",
                 "picture" =>  null,
                 "video" => null,
                 "article" => array(
                     "title" => "Une autre concéquence",
-                    "text" => "L’inpact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.<br/>En effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.<br/>Pour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
+                    "text" => "L’impact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.\r\nEn effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.\r\nPour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
                     "picture1" => null,
                     "picture2" => null,
                 ),
                 "quiz" => array(
-                    "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                    "question" => "Quel sont les conséquence de la déforestation sur les coraux?",
                     "answer"  => array(
                         "name" => "answer1",
-                        "text" => "",
+                        "text" => "A: Une photosynthèse des algues à l’intérieur des polybes impossible",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer2",
-                        "text" => "",
+                        "text" => "B: Plus de déchets, empêchant les coraux de se nourrir",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer3",
-                        "text" => "",
+                        "text" => "C: Une hausse du niveau de la mer qui menace l’environnement des coraux",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer4",
-                        "text" => "",
+                        "text" => "D: Une réduction de la surface de déploiement des coraux",
                         "state" => null,
                     ),
                 ),
@@ -343,7 +335,7 @@ class PagesCoralAction extends Action
                 ),
             ),
             array(
-                "id" => 10,
+                "id" => 9,
                 "name" => "what we can do",
                 "title" => "Il est encore temps d’agir...",
                 "picture" =>  null,

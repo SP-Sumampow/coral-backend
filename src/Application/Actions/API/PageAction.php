@@ -113,7 +113,7 @@ class PageAction extends Action
                  ),
              );
          } else if ($coralId == 5 ) {
-             $data = array(
+             $data =
                  array(
                      "id" => 5,
                      "name" => "Role of the corals",
@@ -194,7 +194,6 @@ class PageAction extends Action
                              "text" => "",
                          ),
                      ),
-                 ),
              );
          } else if ($coralId == 6 ) {
              $data = array(
