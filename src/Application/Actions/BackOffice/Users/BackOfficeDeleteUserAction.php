@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
-class BackOfficeUserAction extends Action
+class BackOfficeDeleteUserAction extends Action
 {
     /**
      * @var UserBDDRepository
@@ -35,13 +35,12 @@ class BackOfficeUserAction extends Action
             if (isset($this->args["id"])) {
                 $userId = (int)$this->args["id"];
                 // User in bdd
-                $user = $this->userBDDRepository->findUserById($userId);
-                if (isset($user)) {
-                    return $view->render($this->response, 'user-BackOffice.twig', [
-                        'user' => $this->userBDDRepository->findUserById($userId)
-                    ]);
+                $isSuccess = $this->userBDDRepository->deleteUserById($userId);
+                if ($isSuccess) {
+                    $url = "?success=Delete user ".$userId;
+                    return $this->response->withRedirect('/backoffice/users'.$url, 301);
                 } else {
-                    $url = "?error=User not found";
+                    $url = "?error=User " . $userId." not found";
                     return $this->response->withRedirect('/backoffice/users'.$url, 301);
                 }
             } else {

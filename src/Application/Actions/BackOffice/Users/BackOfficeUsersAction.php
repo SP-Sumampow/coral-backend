@@ -29,10 +29,18 @@ class BackOfficeUsersAction extends Action
     protected function action(): Response
     {
         if (isset($_SESSION["userId"])) {
+
+            if ($this->request->getMethod() == '')
+            $data = [];
+            $data["users"] = $this->userBDDRepository->findAll();
+            if (isset($this->request->getQueryParams()["error"])) {
+                $data["error"] = $this->request->getQueryParams()["error"];
+            }
+            if (isset($this->request->getQueryParams()["success"])) {
+                $data["success"] = $this->request->getQueryParams()["success"];
+            }
             $view = Twig::fromRequest($this->request);
-            return $view->render($this->response, 'users-BackOffice.twig', [
-                'users' => $this->userBDDRepository->findAll()
-            ]);
+            return $view->render($this->response, 'users-BackOffice.twig', $data);
         } else {
             return $this->response->withRedirect('/', 301);
         }

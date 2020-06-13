@@ -10,27 +10,32 @@ class User implements JsonSerializable
     /**
      * @var int
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      */
-    private $email;
+    public $email;
 
     /**
      * @var string
      */
-    private $firstName;
+    public $firstName;
 
     /**
      * @var string
      */
-    private $lastName;
+    public $lastName;
 
     /**
      * @var string
      */
-    private $description;
+    public $password;
+
+    /**
+     * @var string
+     */
+    public $description;
 
     /**
      * @param int $id
@@ -45,47 +50,8 @@ class User implements JsonSerializable
         $this->email = $email;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->password = "nasinasigoreng";
         $this->description = $description;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
     }
 
     /**
