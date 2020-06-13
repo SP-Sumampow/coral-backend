@@ -187,7 +187,7 @@ class PagesCoralAction extends Action
                 ),
             ),
             array(
-                "id" => 06,
+                "id" => 6,
                 "name" => "Actual situation",
                 "title" => "Mais que se passe t-il ?",
                 "popUps" =>
@@ -252,38 +252,31 @@ class PagesCoralAction extends Action
                 "name" => "bleaching status",
                 "title" => "Le blanchiment devient régulier",
                 "picture" =>  null,
-                "video" => null,
+                "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
                 "article" => array(
-                    "title" => "Le blanchissement",
-                    "text" => "La principale cause de blanchiment est un changement de la température de l'eau de mer supérieur ou inférieur à la normale.
-                        Les coraux se développent bien ou de manière optimale en mer tropicale à une température de 28 à 290 C. 
-
-                        S'il y a une augmentation de la température de 2 ou 3° C au-dessus ou au-dessous de la normale dans une période comprise entre 1 - 2 semaines,
-                         le corail montrera des signes de blanchissement. 
-                         Si la température augmente ou diminue pendant un mois, toutes les colonies de coraux, 
-                         les coraux mous, les anémones et les zoanthides deviendront blancs et mourront si la température augmente 
-                         ou diminue jusqu'à ce qu'elle atteigne la sixième semaine."
+                    "title" => "Le phénomène de Blanchissement",
+                    "text" => "Tous les coraux des mers chaudes vivant près de la surface abritent des symbiotiques microscopiques appelés les zooxanthelles.  Ce sont des algues qui utilisent les déchets métaboliques des coraux pour faire la photosynthèse. En échange d'un abri, et d'une exposition lumineuse suffisante, les zooxanthelles fournissent à leur hôte de l'oxygène, ainsi que les restes de nutriments produits n’ayant pas été consommés, dont le corail se nourrit.\r\n Or le corail, en situation de stress, peut expulser ses zooxanthelles.\r\n Les algues fournissent presque 90% de leur énergie grâce à la photosynthèse, c’est pourquoi le blanchiment mène à la mort de certaines espèces de coraux. Le phénomène a lieu en premier lieu à cause du changement de température des océans, de bactéries causant des maladies, de la pollution et de l’acidification des océans liées aux émissions de gaz à effet de serre dans l’atmosphère.\r\n Suite à un stress causé par divers facteurs, le corail ne reconnait plus la zooxanthelle comme son symbiote. Alors la symbiose entre les coraux et celle-ci s’arrêtent ce qui entrainent ainsi la perte de ces mico-algue et un blanchissement rapide de l’hôte corallien. Ce qu’on appelle le phénomène de Blanchissement !",
                 ),
                 "quiz" => array(
-                    "question" => "Quel est la principale cause du blacnshissement des coraux?",
+                    "question" => "Combien d’épisode de blachissement mondiale des coraux on eu lieu?",
                     "answer"  => array(
                         "name" => "answer1",
-                        "text" => "",
+                        "text" => "A: 0",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer2",
-                        "text" => "",
+                        "text" => "B: 1",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer3",
-                        "text" => "",
+                        "text" => "C: 2",
                         "state" => null,
                     ),
                     array(
                         "name" => "answer4",
-                        "text" => "",
+                        "text" => "D: 3",
                         "state" => null,
                     ),
                 ),
