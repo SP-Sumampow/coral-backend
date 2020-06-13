@@ -257,7 +257,7 @@ class PageAction extends Action
                      "title" => "Faux",
                      "text" => "",
                  ),
-             ),
+             );
          } else if( $coralId == 7) {
              array(
                  "id" => 7,
@@ -301,7 +301,7 @@ class PageAction extends Action
                      "text" => "",
                  ),
 
-             ),
+             );
          };
 
         return $this->respondWithData($data);
