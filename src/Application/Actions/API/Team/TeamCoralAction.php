@@ -33,6 +33,7 @@ class TeamCoralAction extends Action
             $user["id"] = $userInfo["id"];
             $user["name"] = $userInfo["firstname"] . ' ' . $userInfo["lastname"];
             $user["description"] = $userInfo["description"];
+            $user["picture"] = $userInfo["picture"];
             array_push($userList, $user);
         }
 
