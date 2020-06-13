@@ -27,8 +27,8 @@ class BackOfficeUserAction extends Action
      */
     public function __construct(LoggerInterface $logger)
     {
-        $this->userBDDRepository = new UserBDDRepository();
         parent::__construct($logger);
+        $this->userBDDRepository = new UserBDDRepository();
     }
 
     /**

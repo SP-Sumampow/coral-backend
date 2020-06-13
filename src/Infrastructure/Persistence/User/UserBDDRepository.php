@@ -118,6 +118,31 @@ class UserBDDRepository
         }
     }
 
+
+    /**
+     * @param string $email
+     * @param string $password
+     * @return int|null
+     */
+    public function findUserIdByEmailPassword(string $email, string $password): ?int
+    {
+        $salt = $_ENV['SALT_CORAL'];
+        $password = sha1($password . $salt);
+        try {
+            $sql = "SELECT id FROM User WHERE email = ? AND password = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$email, $password]);
+            $userInfo = $preparedSQL->fetch();
+            if ($userInfo == false) {
+                return null;
+            }
+            var_dump($userInfo);
+            return (int)$userInfo['id'];
+        } catch (PDOException $e) {
+            return null;
+        }
+    }
+
     /**
      * @param int $UserId
      * @return User|null
