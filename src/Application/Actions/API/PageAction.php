@@ -123,7 +123,7 @@ class PageAction extends Action
                          "text" => "Le Triangle de corail est l’épicentre de la biodiversité marine de la planète.  Il possède plus de biodiversité que partout ailleurs dans le monde: 76% des espèces de coraux, et 56% des poissons de récifs coralliens dans la région Indo-Pacifique.  L’épicentre de cette diversité corallienne se trouve dans la péninsule de Papouasie indonésienne. Il est fréquenté par la baleine bleue, les dauphins, les marsouins, et le dugong en voie de disparition.",
                      ),
                      "picture" =>  null,
-                     "video" => null,
+                     "video" => "http://167.71.55.113/assets/movies/chapter-2.mp4",
                      "quiz1" => array(
                          "question" => "Les récifs coraliens représentent 0.2 de la surface martime, mais quel part de la biodiversité marine en %?",
                          "answer"  => array(
