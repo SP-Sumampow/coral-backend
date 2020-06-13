@@ -11,6 +11,7 @@ use App\Application\Actions\API\PageAction;
 use App\Application\Actions\BackOffice\BackOfficeHomeAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeUsersAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeUserAction;
+use App\Application\Actions\BackOffice\Users\BackOfficeDeleteUserAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePageAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePagesAction;
 use Slim\App;
@@ -38,7 +39,7 @@ return function (App $app) {
         $group->get('/user/{id}', BackOfficeUserAction::class);
         $group->post('/user/{id}', BackOfficeUserAction::class);
         $group->put('/user/{id}', BackOfficeUserAction::class);
-        $group->delete('/user/{id}', BackOfficeUserAction::class);
+        $group->get('/user/delete/{id}', BackOfficeDeleteUserAction::class);
 
         // PAGES CRUD
         $group->get('/pages', BackOfficePagesAction::class);

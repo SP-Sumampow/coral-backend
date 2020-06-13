@@ -16,5 +16,8 @@ body #login form {
   padding: 15px;
   margin: auto;
 }
+body #pageBackOffice {
+  padding: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */
