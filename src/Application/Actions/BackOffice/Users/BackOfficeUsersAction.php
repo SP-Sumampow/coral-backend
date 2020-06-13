@@ -29,7 +29,6 @@ class BackOfficeUsersAction extends Action
     protected function action(): Response
     {
         if (isset($_SESSION["userId"])) {
-
             if ($this->request->getMethod() == '')
             $data = [];
             $data["users"] = $this->userBDDRepository->findAll();

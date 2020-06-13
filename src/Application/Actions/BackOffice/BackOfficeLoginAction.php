@@ -4,24 +4,27 @@ declare(strict_types=1);
 namespace App\Application\Actions\BackOffice;
 
 use App\Application\Actions\Action;
+use App\Infrastructure\Persistence\User\UserBDDRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
 class BackOfficeLoginAction extends Action
 {
-    private $view;
+    /**
+     * @var UserBDDRepository
+     */
+    private $userBDDRepository;
 
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);
+        $this->userBDDRepository = new UserBDDRepository();
     }
 
 
-    protected function isLogin(string $email, string $password): bool {
-        $fakeEmail = "priska@lalaland.fr";
-        $fakePassword = "keke";
-        return $email == $fakeEmail && $password == $fakePassword;
+    protected function isLogin(string $email, string $password): ?int {
+        return $this->userBDDRepository->findUserIdByEmailPassword($email, $password);
     }
 
     /**
@@ -38,12 +41,14 @@ class BackOfficeLoginAction extends Action
         if ($this->request->getMethod() == "POST") {
             $data = $this->request->getParsedBody();
             // verification
-            if (isset($data["email"]) && isset($data["password"])) {
+            if (isset($data["email"]) && !empty($data["email"]) && isset($data["password"]) && !empty($data["password"])) {
                 $email = $data["email"];
                 $password = $data["password"];
                 // login
-                if ($this->isLogin($email, $password)) {
-                    $_SESSION["userId"] = "1";
+                $userId = $this->isLogin($email, $password);
+                if (isset($userId)) {
+                    var_dump($userId);
+                    $_SESSION["userId"] = $userId;
                     return $this->response->withRedirect('/', 301);
                 } else {
                     $data["error"] = 'Login doesn\'t exist';

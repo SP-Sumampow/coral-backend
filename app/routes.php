@@ -36,9 +36,9 @@ return function (App $app) {
         // USERS CRUD
         $group->get('/users', BackOfficeUsersAction::class);
         $group->get('/user', BackOfficeUserAction::class);
-        $group->get('/user/{id}', BackOfficeUserAction::class);
+        $group->post('/user', BackOfficeUserAction::class);
         $group->post('/user/{id}', BackOfficeUserAction::class);
-        $group->put('/user/{id}', BackOfficeUserAction::class);
+        $group->get('/user/{id}', BackOfficeUserAction::class);
         $group->get('/user/delete/{id}', BackOfficeDeleteUserAction::class);
 
         // PAGES CRUD
