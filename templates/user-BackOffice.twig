@@ -1,30 +1,30 @@
 {% extends "backOffice.twig" %}
 
 {% block pageBackOffice %}
-    <h2>Add an User :</h2>
-    <form>
+    <h2>{{ (user is defined) ? 'Update' : 'Add' }} an User :</h2>
+    <form method="post" action="/backoffice/user{{ (user is defined) ? '/'.user.id : '' }}">
         <div class="form-group">
             <label for="exampleInputEmail1">Firstname</label>
-            <input type="firstname" class="form-control" aria-describedby="firstnameHelp" placeholder="Enter FirstName" value="{{ (user is defined) ? user.firstname : '' }}">
+            <input required name="firstname" type="firstname" class="form-control" aria-describedby="firstnameHelp" placeholder="Enter FirstName" value="{{ (user is defined) ? user.firstname : '' }}">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Lastname</label>
-            <input type="firstname" class="form-control" aria-describedby="lastnameHelp" placeholder="Enter LastName" value="{{ (user is defined) ? user.lastname : '' }}">
+            <input required name="lastname" type="lastname" class="form-control" aria-describedby="lastnameHelp" placeholder="Enter LastName" value="{{ (user is defined) ? user.lastname : '' }}">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Email</label>
-            <input type="email" class="form-control" placeholder="Enter Email" value="{{ (user is defined) ? user.email : '' }}">
+            <input required name="email" type="email" class="form-control" placeholder="Enter Email" value="{{ (user is defined) ? user.email : '' }}">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" value="{{ (user is defined) ? user.password : '' }}">
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" value="{{ (user is defined) ? user.password : '' }}">
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter description" rows="3">{{ (user is defined) ? user.description : '' }}</textarea>
+            <textarea required name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter description" rows="3">{{ (user is defined) ? user.description : '' }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Add
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> {{ (user is defined) ? 'Edit' : 'Add' }}
         </button>
     </form>
 

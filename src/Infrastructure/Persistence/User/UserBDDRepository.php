@@ -4,43 +4,142 @@ declare(strict_types=1);
 namespace App\Infrastructure\Persistence\User;
 
 use App\Domain\User\User;
-use phpDocumentor\Reflection\Types\Null_;
+use \PDO;
 
+/**
+ * Class UserBDDRepository
+ * @package App\Infrastructure\Persistence\User
+ */
 class UserBDDRepository
 {
-    /**
-     * @var User[]
-     */
-    private $users;
 
+    /**
+     * @var PDO
+     */
+    private $pdo;
+
+
+    /**
+     * UserBDDRepository constructor.
+     */
     public function __construct()
     {
-        $this->users = [
-            new User(1, 'lala@lala.fr', 'Bill', 'Gates', 'Muffin soufflé sugar plum. Chocolate bar muffin gummies chocolate cake gummies lollipop gingerbread soufflé. Chocolate cotton candy jujubes cheesecake pastry macaroon. Oat cake cotton candy chupa chups oat cake tootsie roll toffee caramels.'),
-            new User(2, 'lala@lala.fr', 'Steve', 'Jobs', 'Caramels sesame snaps chocolate. Brownie carrot cake lemon drops sweet roll ice cream chocolate. Danish croissant jelly. Brownie gingerbread muffin carrot cake sweet powder marzipan gingerbread dessert.'),
-            new User(3, 'lala@lala.fr', 'Mark', 'Zuckerberg', 'Liquorice topping gummies wafer gingerbread halvah chupa chups. Ice cream jelly-o gingerbread jelly candy canes. Jelly jelly toffee bonbon.'),
-            new User(4, 'lala@lala.fr', 'Evan', 'Spiegel', 'Gingerbread toffee cheesecake halvah croissant bonbon. Bear claw gingerbread cotton candy cake muffin toffee lemon drops. Gingerbread tart biscuit chocolate cake pie muffin.'),
-            new User(5, 'lala@lala.fr', 'Jack', 'Dorsey', 'Pie cheesecake topping soufflé muffin wafer sugar plum. Jujubes brownie chupa chups croissant gummies icing topping. Gummi bears apple pie cake carrot cake jelly powder muffin marshmallow wafer.')
-        ];
+        $host = $_ENV['CORAL_IP_MYSQL'];
+        $dbName = "coral";
+        $user = $_ENV['CORAL_ACCOUNT_MYQSL'];
+        $pass = $_ENV['CORAL_PASSWORD_MYSQL'];
+
+        $this->pdo = new PDO("mysql:host=" . $host . ";dbname=" . $dbName, $user, $pass);
     }
 
-    public function findAll(): array
+    /**
+     * @param string $email
+     * @param string $firstname
+     * @param string $lastname
+     * @param string $password
+     * @param string $description
+     * @return bool
+     */
+    public function addUser(string $email, string $firstname, string $lastname, string $password, string $description): bool
     {
-        return array_values($this->users);
+        $salt = $_ENV['SALT_CORAL'];
+        $password = sha1($password . $salt);
+        try {
+            $sql = "insert INTO User (firstname, lastname, email, password, description) VALUES (?, ?, ?, ?, ?)";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$firstname, $lastname, $email, $password, $description]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 
+    /**
+     * @param int $id
+     * @param string $email
+     * @param string $firstname
+     * @param string $lastname
+     * @param string|null $password
+     * @param string $description
+     * @return bool
+     */
+    public function updateUser(int $id, string $email, string $firstname, string $lastname, ?string $password, string $description): bool
+    {
+        $salt = $_ENV['SALT_CORAL'];
+        $password = sha1($password . $salt);
+        try {
+            $sql = "UPDATE User SET firstname=?,lastname=?,email=?,description=?";
+            if (isset($password)) {
+                $sql = $sql . ",password=?:";
+            }
+            $sql = $sql . " WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $paramArray = [$firstname, $lastname, $email, $description];
+            if (isset($password)) {
+                array_push($paramArray, $password);
+            }
+            array_push($paramArray, $id);
+            $preparedSQL->execute($paramArray);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    /**
+     * @param int $UserId
+     * @return bool
+     */
+    public function deleteUserById(int $UserId): bool
+    {
+        try {
+            $sql = "DELETE FROM User WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$UserId]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    /**
+     * @return array|null
+     */
+    public function findAll(): ?array
+    {
+        try {
+            $sql = "SELECT id, firstname, lastname, email, description FROM User";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute();
+            $users = $preparedSQL->fetchAll();
+            return $users;
+        } catch (PDOException $e) {
+            return null;
+        }
+    }
+
+    /**
+     * @param int $UserId
+     * @return User|null
+     */
     public function findUserById(int $UserId): ?User
     {
+
+        try {
+            $sql = "SELECT id, firstname, lastname, email, description FROM User WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$UserId]);
+            $userInfo = $preparedSQL->fetch();
+            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['description']);
+        } catch (PDOException $e) {
+            return null;
+        }
+
         $key = array_search($UserId, array_column($this->users, 'id'));
         $user = $this->users[$key];
         if ($user->id != $UserId) {
             return null;
         }
         return $user;
-    }
-
-    public function deleteUserById(int $UserId): bool
-    {
-        return false;
     }
 }

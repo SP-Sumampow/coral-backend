@@ -23,7 +23,7 @@ class User implements JsonSerializable
     public $firstname;
 
     /**
-     * @var string
+     * @var ?string
      */
     public $lastname;
 
@@ -51,7 +51,7 @@ class User implements JsonSerializable
         $this->firstname = $firstName;
         $this->lastname = $lastName;
         $salt = $_ENV['SALT_CORAL'];
-        $this->password = sha1("nasinasigoreng" . $salt);
+        $this->password = null;
         $this->description = $description;
     }
 
