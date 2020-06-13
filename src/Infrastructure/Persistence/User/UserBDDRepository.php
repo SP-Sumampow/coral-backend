@@ -24,10 +24,10 @@ class UserBDDRepository
      */
     public function __construct()
     {
-        $host = $_ENV['CORAL_IP_MYSQL'];
+        $host = isset($_SERVER['CORAL_IP_MYSQL']) ? $_SERVER['CORAL_IP_MYSQL'] : $_ENV['CORAL_IP_MYSQL'];
         $dbName = "coral";
-        $user = $_ENV['CORAL_ACCOUNT_MYQSL'];
-        $pass = $_ENV['CORAL_PASSWORD_MYSQL'];
+        $user = isset($_SERVER['CORAL_ACCOUNT_MYQSL']) ? $_SERVER['CORAL_ACCOUNT_MYQSL'] : $_ENV['CORAL_ACCOUNT_MYQSL'];
+        $pass = isset($_SERVER['CORAL_PASSWORD_MYSQL']) ? $_SERVER['CORAL_PASSWORD_MYSQL'] : $_ENV['CORAL_PASSWORD_MYSQL'];
 
         $this->pdo = new PDO("mysql:host=" . $host . ";dbname=" . $dbName, $user, $pass);
     }
@@ -42,7 +42,7 @@ class UserBDDRepository
      */
     public function addUser(string $email, string $firstname, string $lastname, string $password, string $description): bool
     {
-        $salt = $_ENV['SALT_CORAL'];
+        $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
             $sql = "insert INTO User (firstname, lastname, email, password, description) VALUES (?, ?, ?, ?, ?)";
@@ -65,12 +65,12 @@ class UserBDDRepository
      */
     public function updateUser(int $id, string $email, string $firstname, string $lastname, ?string $password, string $description): bool
     {
-        $salt = $_ENV['SALT_CORAL'];
+        $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
             $sql = "UPDATE User SET firstname=?,lastname=?,email=?,description=?";
             if (isset($password)) {
-                $sql = $sql . ",password=?:";
+                $sql = $sql . ",password=?";
             }
             $sql = $sql . " WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
@@ -126,7 +126,7 @@ class UserBDDRepository
      */
     public function findUserIdByEmailPassword(string $email, string $password): ?int
     {
-        $salt = $_ENV['SALT_CORAL'];
+        $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
             $sql = "SELECT id FROM User WHERE email = ? AND password = ?";
@@ -136,7 +136,6 @@ class UserBDDRepository
             if ($userInfo == false) {
                 return null;
             }
-            var_dump($userInfo);
             return (int)$userInfo['id'];
         } catch (PDOException $e) {
             return null;

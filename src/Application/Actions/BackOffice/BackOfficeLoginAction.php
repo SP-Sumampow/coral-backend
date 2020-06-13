@@ -47,7 +47,6 @@ class BackOfficeLoginAction extends Action
                 // login
                 $userId = $this->isLogin($email, $password);
                 if (isset($userId)) {
-                    var_dump($userId);
                     $_SESSION["userId"] = $userId;
                     return $this->response->withRedirect('/', 301);
                 } else {
