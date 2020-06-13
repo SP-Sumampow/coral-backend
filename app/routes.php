@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 use App\Application\Actions\API\ListOfCoralAction;
-use App\Application\Actions\API\TeamCoralAction;
+use App\Application\Actions\API\Team\TeamCoralAction;
 use App\Application\Actions\API\PagesCoralAction;
 use App\Application\Actions\API\CoralAction;
 use App\Application\Actions\BackOffice\BackOfficeLoginAction;
