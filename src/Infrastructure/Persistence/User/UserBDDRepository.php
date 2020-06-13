@@ -136,7 +136,6 @@ class UserBDDRepository
             if ($userInfo == false) {
                 return null;
             }
-            var_dump($userInfo);
             return (int)$userInfo['id'];
         } catch (PDOException $e) {
             return null;
