@@ -1,15 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\Actions\BackOffice;
+namespace App\Application\Actions\Api\Team;
 
 use App\Application\Actions\Action;
 use App\Infrastructure\Persistence\User\UserBDDRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
-use Slim\Views\Twig;
 
-class BackOfficeHomeAction extends Action
+class TeamCoralAction extends Action
 {
     /**
      * @var UserBDDRepository
@@ -25,15 +24,18 @@ class BackOfficeHomeAction extends Action
     /**
      * {@inheritdoc}
      */
-
     protected function action(): Response
     {
-        $view = Twig::fromRequest($this->request);
-
-        if (isset($_SESSION["userId"])) {
-            return $view->render($this->response, 'home-BackOffice.twig', [
-                'name' => "coucou"
-            ]);
+        $userListInfo = $this->userBDDRepository->findAll();
+        $userList = [];
+        foreach ($userListInfo as $userInfo) {
+            $user = [];
+            $user["id"] = $userInfo["id"];
+            $user["name"] = $userInfo["firstname"] . ' ' . $userInfo["lastname"];
+            $user["description"] = $userInfo["description"];
+            array_push($userList, $user);
         }
+
+        return $this->respondWithData($userList);
     }
 }
