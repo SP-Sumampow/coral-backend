@@ -2,7 +2,7 @@
 
 {% block pageBackOffice %}
     <h2>{{ (user is defined) ? 'Update' : 'Add' }} an User :</h2>
-    <form method="post" action="/backoffice/user{{ (user is defined) ? '/'.user.id : '' }}">
+    <form method="post" action="/backoffice/user{{ (user is defined) ? '/' ~ user.id : '' }}">
         <div class="form-group">
             <label for="exampleInputEmail1">Firstname</label>
             <input required name="firstname" type="firstname" class="form-control" aria-describedby="firstnameHelp" placeholder="Enter FirstName" value="{{ (user is defined) ? user.firstname : '' }}">

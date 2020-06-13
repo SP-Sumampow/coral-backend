@@ -76,14 +76,14 @@ class BackOfficeUserAction extends Action
                 // Update user
                 if ($this->request->getMethod() == "POST") {
                     if ($this->isPostValid(true)) {
-
+                        $userId = (int)$this->args["id"];
                         $email = $this->request->getParsedBody()["email"];
                         $lastname = $this->request->getParsedBody()["lastname"];
                         $firstname = $this->request->getParsedBody()["firstname"];
                         $password = $this->request->getParsedBody()["password"];
                         $description = $this->request->getParsedBody()["description"];
 
-                        if ($this->userBDDRepository->addUser($email, $firstname, $lastname, $password, $description)) {
+                        if ($this->userBDDRepository->updateUser($userId, $email, $firstname, $lastname, $password, $description)) {
                             $url = "?success=User updated";
                             return $this->response->withRedirect('/backoffice/users' . $url, 301);
                         } else {

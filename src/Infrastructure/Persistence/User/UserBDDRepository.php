@@ -70,7 +70,7 @@ class UserBDDRepository
         try {
             $sql = "UPDATE User SET firstname=?,lastname=?,email=?,description=?";
             if (isset($password)) {
-                $sql = $sql . ",password=?:";
+                $sql = $sql . ",password=?";
             }
             $sql = $sql . " WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
