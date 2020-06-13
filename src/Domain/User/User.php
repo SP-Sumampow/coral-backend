@@ -50,7 +50,7 @@ class User implements JsonSerializable
         $this->email = $email;
         $this->firstname = $firstName;
         $this->lastname = $lastName;
-        $salt = $_ENV['SALT_CORAL'];
+        $salt = $_SERVER['SALT_CORAL'];
         $this->password = null;
         $this->description = $description;
     }
