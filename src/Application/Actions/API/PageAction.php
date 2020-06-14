@@ -76,7 +76,7 @@ class PageAction extends Action
                      ),
                  ),
                  "picture" =>  null,
-                 "video" => "http://167.71.55.113/assets/movies/chapter-1-corals.mp4",
+                 "video" => "http://167.71.55.113/assets/movies/immersive-ch1.mp4",
                  "quiz" => array(
                      "question" => "A quel reigne appartient le corail?",
                      "answer"  => array(
