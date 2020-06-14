@@ -82,7 +82,7 @@ class BackOfficeArticleAction extends Action
                             return $this->response->withRedirect('/backoffice/articles' . $url, 301);
                         }
                     } else {
-                        return $view->render($this->response, 'articles-backOffice.twig', []);
+                        return $view->render($this->response, 'articles_back_office.twig', []);
                     }
                 } else {
                     $articleId = (int)$this->args["id"];

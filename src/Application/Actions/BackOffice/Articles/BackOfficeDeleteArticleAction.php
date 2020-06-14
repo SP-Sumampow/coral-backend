@@ -45,7 +45,7 @@ class BackOfficeDeleteArticleAction extends Action
                     return $this->response->withRedirect('/backoffice/articles'.$url, 301);
                 }
             } else {
-                return $view->render($this->response, 'articles-BackOffice.twig', []);
+                return $view->render($this->response, 'articles_back_office.twig', []);
             }
         } else {
             return $this->response->withRedirect('/', 301);

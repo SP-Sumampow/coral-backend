@@ -40,7 +40,7 @@ class BackOfficeArticlesAction extends Action
                 $data["success"] = $this->request->getQueryParams()["success"];
             }
             $view = Twig::fromRequest($this->request);
-            return $view->render($this->response, 'articles-BackOffice.twig', $data);
+            return $view->render($this->response, 'articles_back_office.twig', $data);
         } else {
             return $this->response->withRedirect('/', 301);
         }
