@@ -29,6 +29,7 @@ class PageAction extends Action
                      "picture" =>  null,
                      "title" => "Les coraux, la vie se meurt",
                      "video" => null,
+                     "music" => "http://167.71.55.113/assets/movies/main-song.mov",
                      "textDisclame" => array(
                          "title" => "Attention",
                          "text" => "Ce site a été réalisé à des fins pédagogiques dans le cadre du cursus Bachelor de l’école HETIC.  Les contenus présentés n'ont pas fait l'objet d'une demande de droit d'utilisation.  Ce site ne sera en aucun cas exploité à des fins commerciales et ne sera pas publié."
