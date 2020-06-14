@@ -44,7 +44,7 @@ class BackOfficeDeleteUserAction extends Action
                     return $this->response->withRedirect('/backoffice/users'.$url, 301);
                 }
             } else {
-                return $view->render($this->response, 'user-BackOffice.twig', []);
+                return $view->render($this->response, 'users-BackOffice.twig', []);
             }
         } else {
             return $this->response->withRedirect('/', 301);
