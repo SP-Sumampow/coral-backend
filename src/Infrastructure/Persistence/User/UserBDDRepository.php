@@ -36,18 +36,19 @@ class UserBDDRepository
      * @param string $email
      * @param string $firstname
      * @param string $lastname
+     * @param string $picture
      * @param string $password
      * @param string $description
      * @return bool
      */
-    public function addUser(string $email, string $firstname, string $lastname, string $password, string $description): bool
+    public function addUser(string $email, string $firstname, string $lastname, string $picture, string $password, string $description): bool
     {
         $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
-            $sql = "insert INTO User (firstname, lastname, email, password, description) VALUES (?, ?, ?, ?, ?)";
+            $sql = "insert INTO User (firstname, lastname, picture, email, password, description) VALUES (?, ?, ?, ?, ?, ?)";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$firstname, $lastname, $email, $password, $description]);
+            $preparedSQL->execute([$firstname, $lastname, $picture, $email, $password, $description]);
             return true;
         } catch (PDOException $e) {
             return false;
@@ -59,22 +60,23 @@ class UserBDDRepository
      * @param string $email
      * @param string $firstname
      * @param string $lastname
+     * @param string $picture
      * @param string|null $password
      * @param string $description
      * @return bool
      */
-    public function updateUser(int $id, string $email, string $firstname, string $lastname, ?string $password, string $description): bool
+    public function updateUser(int $id, string $email, string $firstname, string $lastname, string $picture, ?string $password, string $description): bool
     {
         $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
-            $sql = "UPDATE User SET firstname=?,lastname=?,email=?,description=?";
+            $sql = "UPDATE User SET firstname=?,lastname=?,picture=?,email=?,description=?";
             if (isset($password)) {
                 $sql = $sql . ",password=?";
             }
             $sql = $sql . " WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $paramArray = [$firstname, $lastname, $email, $description];
+            $paramArray = [$firstname, $lastname, $picture, $email, $description];
             if (isset($password)) {
                 array_push($paramArray, $password);
             }
@@ -108,7 +110,7 @@ class UserBDDRepository
     public function findAll(): ?array
     {
         try {
-            $sql = "SELECT id, firstname, lastname, email, description FROM User";
+            $sql = "SELECT id, firstname, lastname, picture, email, description FROM User";
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute();
             $users = $preparedSQL->fetchAll();
@@ -150,11 +152,11 @@ class UserBDDRepository
     {
 
         try {
-            $sql = "SELECT id, firstname, lastname, email, description FROM User WHERE id = ?";
+            $sql = "SELECT id, firstname, lastname, picture, email, description FROM User WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$UserId]);
             $userInfo = $preparedSQL->fetch();
-            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['description']);
+            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
         } catch (PDOException $e) {
             return null;
         }

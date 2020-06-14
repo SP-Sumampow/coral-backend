@@ -38,26 +38,29 @@ class BackOfficeUserAction extends Action
     protected function isPostValid(bool $isPasswordOptional): bool
     {
         $email = $this->request->getParsedBody()["email"];
-        $isEmailValid = isset($email) && !empty($email);
+        $hasEmailValid = isset($email) && !empty($email);
 
         $lastname = $this->request->getParsedBody()["lastname"];
-        $isLastName = isset($lastname) && !empty($lastname);
+        $hasLastName = isset($lastname) && !empty($lastname);
 
         $firstname = $this->request->getParsedBody()["firstname"];
-        $isFirstname = isset($firstname) && !empty($firstname);
+        $hasFirstname = isset($firstname) && !empty($firstname);
 
-        $isPasword = false;
+        $picture = $this->request->getParsedBody()["picture"];
+        $hasPicture = isset($picture) && !empty($picture);
+
+        $hasPasword = false;
         if ($isPasswordOptional) {
-            $isPasword = true;
+            $hasPasword = true;
         } else {
             $password = $this->request->getParsedBody()["password"];
-            $isPasword = isset($password) && !empty($password);
+            $hasPasword = isset($password) && !empty($password);
         }
 
         $description = $this->request->getParsedBody()["description"];
         $isDescription = isset($description) && !empty($description);
 
-        return $isEmailValid && $isLastName && $isFirstname && $isPasword && $isDescription;
+        return $hasEmailValid && $hasLastName && $hasFirstname && $hasPicture && $hasPasword && $isDescription;
     }
 
     /**
@@ -80,10 +83,11 @@ class BackOfficeUserAction extends Action
                         $email = $this->request->getParsedBody()["email"];
                         $lastname = $this->request->getParsedBody()["lastname"];
                         $firstname = $this->request->getParsedBody()["firstname"];
+                        $picture = $this->request->getParsedBody()["picture"];
                         $password = $this->request->getParsedBody()["password"];
                         $description = $this->request->getParsedBody()["description"];
 
-                        if ($this->userBDDRepository->updateUser($userId, $email, $firstname, $lastname, $password, $description)) {
+                        if ($this->userBDDRepository->updateUser($userId, $email, $firstname, $lastname, $picture, $password, $description)) {
                             $url = "?success=User updated";
                             return $this->response->withRedirect('/backoffice/users' . $url, 301);
                         } else {
@@ -113,10 +117,11 @@ class BackOfficeUserAction extends Action
                         $email = $this->request->getParsedBody()["email"];
                         $lastname = $this->request->getParsedBody()["lastname"];
                         $firstname = $this->request->getParsedBody()["firstname"];
+                        $picture = $this->request->getParsedBody()["picture"];
                         $password = $this->request->getParsedBody()["password"];
                         $description = $this->request->getParsedBody()["description"];
 
-                        if ($this->userBDDRepository->addUser($email, $firstname, $lastname, $password, $description)) {
+                        if ($this->userBDDRepository->addUser($email, $firstname, $lastname,$picture, $password, $description)) {
                             $url = "?success=User added";
                             return $this->response->withRedirect('/backoffice/users' . $url, 301);
                         } else {
