@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence\Quiz;
 
-use App\Domain\Quizz\Quiz;
+use App\Domain\Quiz\Quiz;
 use App\Domain\User\User;
 use \PDO;
 
@@ -86,7 +86,6 @@ class QuizBDDRepository
         } catch (PDOException $e) {
             return false;
         }
-        return true;
     }
 
     /**
@@ -102,7 +101,6 @@ class QuizBDDRepository
         } catch (PDOException $e) {
             return false;
         }
-        return true;
     }
 
     /**
@@ -114,12 +112,11 @@ class QuizBDDRepository
             $sql = "SELECT * FROM Quiz";
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute();
-            $users = $preparedSQL->fetchAll();
-            return $users;
+            $quizzes = $preparedSQL->fetchAll();
+            return $quizzes;
         } catch (PDOException $e) {
             return null;
         }
-        return [];
     }
 
     /**
@@ -137,7 +134,5 @@ class QuizBDDRepository
         } catch (PDOException $e) {
             return null;
         }
-
-        return null;
     }
 }

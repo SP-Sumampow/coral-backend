@@ -103,7 +103,7 @@ class BackOfficeQuizAction extends Action
                     $quiz = $this->quizBDDRepository->findQuizzById($quizId);
                     if (isset($quiz)) {
                         return $view->render($this->response, 'quiz-BackOffice.twig', [
-                            'quiz' => $this->quizBDDRepository->findQuizzById($quizId)
+                            'quiz' => $quiz
                         ]);
                     } else {
                         $url = "?error=Quiz not found";

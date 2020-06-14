@@ -40,7 +40,7 @@ class BackOfficeDeleteQuizAction extends Action
                     $url = "?success=Delete quiz ".$quizId;
                     return $this->response->withRedirect('/backoffice/quizzes'.$url, 301);
                 } else {
-                    $url = "?error=User " . $quizId." not found";
+                    $url = "?error=Quiz " . $quizId." not found";
                     return $this->response->withRedirect('/backoffice/quizzes'.$url, 301);
                 }
             } else {

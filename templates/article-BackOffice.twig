@@ -1,0 +1,42 @@
+{% extends "backOffice.twig" %}
+
+{% block pageBackOffice %}
+    <h2>{{ (article is defined) ? 'Update' : 'Add' }} an article :</h2>
+    <form method="post" action="/backoffice/article{{ (article is defined) ? '/' ~ article.id : '' }}">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Name</label>
+            <input required name="name" type="text" class="form-control" placeholder="Enter article name" value="{{ (article is defined) ? article.name : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input required name="title" type="text" class="form-control" placeholder="Enter article title" value="{{ (article is defined) ? article.title : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <textarea required name="text" class="form-control" id="text" placeholder="Enter article text" rows="3">{{ (article is defined) ? article.text : '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="video">Video</label>
+            <input required name="video" type="text" class="form-control" placeholder="Enter article video" value="{{ (article is defined) ? article.video : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="picture1">Picture 1</label>
+            <input name="picture1" type="text" class="form-control" placeholder="Enter article picture1 " value="{{ (article is defined) ? article.picture1 : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="picture2">Picture 2</label>
+            <input name="picture2" type="text" class="form-control" placeholder="Enter article picture 2" value="{{ (article is defined) ? article.picture2 : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="picture3">Picture 3</label>
+            <input name="picture3" type="text" class="form-control" placeholder="Enter article picture 3" value="{{ (article is defined) ? article.picture3 : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="picture4">Picture 4</label>
+            <input name="picture4" type="text" class="form-control" placeholder="Enter article picture 4" value="{{ (article is defined) ? article.picture4 : '' }}">
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> {{ (article is defined) ? 'Edit' : 'Add' }}
+        </button>
+    </form>
+{% endblock %}

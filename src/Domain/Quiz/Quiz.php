@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Domain\Quizz;
+namespace App\Domain\Quiz;
 
 use JsonSerializable;
 
@@ -19,47 +19,72 @@ class Quiz implements JsonSerializable
     /**
      * @var string
      */
-    public $question;
+    public $name;
 
     /**
      * @var string
      */
-    public $answer1Text;
-
-    /**
-     * @var bool
-     */
-    public $answer1State;
+    public $title;
 
     /**
      * @var string
      */
-    public $answer2Text;
-
-    /**
-     * @var bool
-     */
-    public $answer2State;
+    public $picture;
 
     /**
      * @var string
      */
-    public $answer3Text;
-
-    /**
-     * @var bool
-     */
-    public $answer3State;
+    public $video;
 
     /**
      * @var string
      */
-    public $answer4Text;
+    public $musique;
 
     /**
-     * @var bool
+     * @var string
      */
-    public $answer4State;
+    public $textDisclameTitle;
+
+    /**
+     * @var string
+     */
+    public $textDisclameText;
+
+    /**
+     * @var string
+     */
+    public $textInstructionTitle;
+
+    /**
+     * @var string
+     */
+    public $textInstructionText;
+
+    /**
+     * @var string
+     */
+    public $popup1Title;
+
+    /**
+     * @var string
+     */
+    public $popup1Text;
+
+    /**
+     * @var string
+     */
+    public $popup2Title;
+
+    /**
+     * @var string
+     */
+    public $popup2Text;
+
+    /**
+     * @var Quiz
+     */
+    public $quiz1;
 
     /**
      * @var string
