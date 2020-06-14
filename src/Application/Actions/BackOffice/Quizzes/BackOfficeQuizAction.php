@@ -61,26 +61,31 @@ class BackOfficeQuizAction extends Action
                         $question = $this->request->getParsedBody()["question"];
 
                         $answer1Text = $this->request->getParsedBody()["answer1Text"];
-                        $answer1State = $this->request->getParsedBody()["answer1State"];
-                        if (isset($answer1State)) {
-                            $answer1State = $answer1State == '1';
+                        $answer1State = 0;
+                        if (isset($this->request->getParsedBody()["answer1State"])) {
+                            $answer1State = ($this->request->getParsedBody()["answer1State"] == 'on') ? 1 : 0;
                         }
-                        $answer1State = isset($answer1State) ? $answer1State : '0';
 
                         $answer2Text = $this->request->getParsedBody()["answer2Text"];
-                        $answer2State = $this->request->getParsedBody()["answer2State"];
-                        $answer2State = isset($answer2State) ? $answer1State : '0';
+                        $answer2State = 0;
+                        if (isset($this->request->getParsedBody()["answer2State"])) {
+                            $answer2State = ($this->request->getParsedBody()["answer2State"] == 'on') ? 1 : 0;
+                        }
 
                         $answer3Text = $this->request->getParsedBody()["answer3Text"];
-                        $answer3State = $this->request->getParsedBody()["answer3State"];
-                        $answer3State = isset($answer3State) ? $answer3State : '0';
+                        $answer3State = 0;
+                        if (isset($this->request->getParsedBody()["answer3State"])) {
+                            $answer3State = ($this->request->getParsedBody()["answer3State"] == 'on') ? 1 : 0;
+                        }
 
                         $answer4Text = $this->request->getParsedBody()["answer4Text"];
-                        $answer4State = $this->request->getParsedBody()["answer4State"];
-                        $answer4State = isset($answer4State) ? $answer4State : '0';
+                        $answer4State = 0;
+                        if (isset($this->request->getParsedBody()["answer4State"])) {
+                            $answer4State = ($this->request->getParsedBody()["answer4State"] == 'on') ? 1 : 0;
+                        }
 
-                        $answerTrueText = $this->request->getParsedBody()["quizAnswerTrueText"];
-                        $answerFalseText = $this->request->getParsedBody()["quizAnswerFalseText"];
+                        $answerTrueText = $this->request->getParsedBody()["answerTrueText"];
+                        $answerFalseText = $this->request->getParsedBody()["answerFalseText"];
 
                         if ($this->quizBDDRepository->updateQuiz($quizId, $question, $answer1Text, $answer1State, $answer2Text, $answer2State, $answer3Text, $answer3State, $answer4Text, $answer4State, $answerTrueText, $answerFalseText)) {
                             $url = "?success=Quiz updated";

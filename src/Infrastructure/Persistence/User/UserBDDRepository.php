@@ -48,8 +48,7 @@ class UserBDDRepository
         try {
             $sql = "insert INTO User (firstname, lastname, picture, email, password, description) VALUES (?, ?, ?, ?, ?, ?)";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$firstname, $lastname, $picture, $email, $password, $description]);
-            return true;
+            return $preparedSQL->execute([$firstname, $lastname, $picture, $email, $password, $description]);;
         } catch (PDOException $e) {
             return false;
         }
@@ -81,8 +80,7 @@ class UserBDDRepository
                 array_push($paramArray, $password);
             }
             array_push($paramArray, $id);
-            $preparedSQL->execute($paramArray);
-            return true;
+            return $preparedSQL->execute($paramArray);
         } catch (PDOException $e) {
             return false;
         }
@@ -97,8 +95,7 @@ class UserBDDRepository
         try {
             $sql = "DELETE FROM User WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$UserId]);
-            return true;
+            return $preparedSQL->execute([$UserId]);
         } catch (PDOException $e) {
             return false;
         }

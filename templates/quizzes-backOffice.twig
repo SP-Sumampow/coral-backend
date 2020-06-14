@@ -2,7 +2,7 @@
 
 {% block pageBackOffice %}
     <h2>List of Quizzes :</h2>
-    {% if quizzes is defined %}
+    {% if quizzes is defined and quizzes is empty == false %}
         <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>

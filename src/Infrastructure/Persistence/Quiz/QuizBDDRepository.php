@@ -75,18 +75,14 @@ class QuizBDDRepository
      * @param string $quizAnswerFalseText
      * @return bool
      */
-    public function updateQuiz(int $id, string $question, string $answer1Text, ?string $answer1State, string $answer2Text, ?string $answer2State, ?string $answer3Text, ?string $answer3State, ?string $answer4Text, ?string $answer4State, string $answerTrueText, string $answerFalseText): bool
+    public function updateQuiz(int $id, string $question, string $answer1Text, ?int $answer1State, string $answer2Text, ?int $answer2State, ?string $answer3Text, ?int $answer3State, ?string $answer4Text, ?int $answer4State, string $answerTrueText, string $answerFalseText): bool
     {
         try {
-            $sql = "UPDATE User SET question=?, answer1Text=?,answer1State=?,answer2State=?,answer2State=?, answer3Text=?, answer3State=?, answer4Text=?, answer4State=?, answerTrueText=?, answerFalseText=? WHERE id = ?";
+            $sql = "UPDATE Quiz SET question=?,answer1Text=?,answer1State=?,answer2Text=?,answer2State=?,answer3Text=?,answer3State=?,answer4Text=?,answer4State=?,answerTrueText=?,answerFalseText=? WHERE id=?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $paramArray = [$question, $answer1Text, $answer1State, $answer2Text, $answer2State, $answer3Text, $answer3State, $answer4Text, $answer4State, $answerTrueText, $answerFalseText];
-            if (isset($password)) {
-                array_push($paramArray, $password);
-            }
-            array_push($paramArray, $id);
+            $paramArray = [$question, $answer1Text, $answer1State, $answer2Text, $answer2State, $answer3Text, $answer3State, $answer4Text, $answer4State, $answerTrueText, $answerFalseText, $id];
             $preparedSQL->execute($paramArray);
-            return true;
+            return $preparedSQL->execute($paramArray);
         } catch (PDOException $e) {
             return false;
         }
@@ -102,8 +98,7 @@ class QuizBDDRepository
         try {
             $sql = "DELETE FROM Quiz WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$quizId]);
-            return true;
+            return $preparedSQL->execute([$quizId]);;
         } catch (PDOException $e) {
             return false;
         }
@@ -133,17 +128,15 @@ class QuizBDDRepository
      */
     public function findQuizzById(int $quizId): ?Quiz
     {
-
-//        try {
-//            $sql = "SELECT * FROM Quiz WHERE id = ?";
-//            $preparedSQL = $this->pdo->prepare($sql);
-//            $preparedSQL->execute([$quizId]);
-//            $quizInfo = $preparedSQL->fetch();
-//            var_dump($quizInfo);
-//            return new Quiz((int)$quizInfo['id'], $quizInfo['question'], $quizInfo['answer1Text'], $quizInfo['answer1State'], $quizInfo['answer2Text'], $quizInfo['answer2State'], $quizInfo['answer3Text'], $quizInfo['answer3State'], $quizInfo['answer4Text'], $quizInfo['answer4State'], $quizInfo['answerTrueText'], $quizInfo['answerFalseText']);
-//        } catch (PDOException $e) {
-//            return null;
-//        }
+        try {
+            $sql = "SELECT * FROM Quiz WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$quizId]);
+            $quizInfo = $preparedSQL->fetch();
+            return new Quiz((int)$quizInfo['id'], $quizInfo['question'], $quizInfo['answer1Text'], $quizInfo['answer1State'], $quizInfo['answer2Text'], $quizInfo['answer2State'], $quizInfo['answer3Text'], $quizInfo['answer3State'], $quizInfo['answer4Text'], $quizInfo['answer4State'], $quizInfo['answerTrueText'], $quizInfo['answerFalseText']);
+        } catch (PDOException $e) {
+            return null;
+        }
 
         return null;
     }
