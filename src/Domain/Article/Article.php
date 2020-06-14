@@ -6,8 +6,8 @@ namespace App\Domain\Article;
 use JsonSerializable;
 
 /**
- * Class Quizz
- * @package App\Domain\Quizz
+ * Class Article
+ * @package App\Domain\Article
  */
 class Article implements JsonSerializable
 {
