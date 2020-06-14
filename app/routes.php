@@ -14,9 +14,11 @@ use App\Application\Actions\BackOffice\Users\BackOfficeUserAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeDeleteUserAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePageAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePagesAction;
+use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizzesAction;
+use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizAction;
+use App\Application\Actions\BackOffice\Quizzes\BackOfficeDeleteQuizAction;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
-use Slim\Views\Twig;
 
 return function (App $app) {
 
@@ -40,6 +42,14 @@ return function (App $app) {
         $group->post('/user/{id}', BackOfficeUserAction::class);
         $group->get('/user/{id}', BackOfficeUserAction::class);
         $group->get('/user/delete/{id}', BackOfficeDeleteUserAction::class);
+
+        // Quiz CRUD
+        $group->get('/quizzes', BackOfficeQuizzesAction::class);
+        $group->get('/quiz', BackOfficeQuizAction::class);
+        $group->post('/quiz', BackOfficeQuizAction::class);
+        $group->post('/quiz/{id}', BackOfficeQuizAction::class);
+        $group->get('/quiz/{id}', BackOfficeQuizAction::class);
+        $group->get('/quiz/delete/{id}', BackOfficeDeleteQuizAction::class);
 
         // PAGES CRUD
         $group->get('/pages', BackOfficePagesAction::class);

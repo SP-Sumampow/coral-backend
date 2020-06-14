@@ -148,24 +148,17 @@ class UserBDDRepository
      * @param int $UserId
      * @return User|null
      */
-    public function findUserById(int $UserId): ?User
+    public function findUserById(int $quizId): ?User
     {
 
         try {
             $sql = "SELECT id, firstname, lastname, picture, email, description FROM User WHERE id = ?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$UserId]);
+            $preparedSQL->execute([$quizId]);
             $userInfo = $preparedSQL->fetch();
             return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
         } catch (PDOException $e) {
             return null;
         }
-
-        $key = array_search($UserId, array_column($this->users, 'id'));
-        $user = $this->users[$key];
-        if ($user->id != $UserId) {
-            return null;
-        }
-        return $user;
     }
 }

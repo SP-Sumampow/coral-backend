@@ -1,0 +1,55 @@
+{% extends "backOffice.twig" %}
+
+{% block pageBackOffice %}
+    <h2>{{ (quiz is defined) ? 'Update' : 'Add' }} a quiz :</h2>
+    <form method="post" action="/backoffice/quiz{{ (quiz is defined) ? '/' ~ quiz.id : '' }}">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Question</label>
+            <textarea required name="question" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter question" rows="3">{{ (quiz is defined) ? quiz.question : '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Answer 1</label>
+            <textarea required name="answer1Text" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter answer" rows="3">{{ (quiz is defined) ? quiz.answer1Text : '' }}</textarea>
+            <div class="form-check">
+                <input name="answer1State" type="checkbox" class="form-check-input" id="answer1State">
+                <label class="form-check-label" for="answer1State">True</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Answer 2</label>
+            <textarea required name="answer2Text" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter answer" rows="3">{{ (quiz is defined) ? quiz.answer2Text : '' }}</textarea>
+            <div class="form-check">
+                <input name="answer2State" type="checkbox" class="form-check-input" id="answer2State">
+                <label class="form-check-label" for="answer2State">True</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Answer 3</label>
+            <textarea required name="answer3Text" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter answer1" rows="3">{{ (quiz is defined) ? quiz.answer3Text : '' }}</textarea>
+            <div class="form-check">
+                <input name="answer3State" type="checkbox" class="form-check-input" id="answer3State">
+                <label class="form-check-label" for="answer3State">True</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Answer 4</label>
+            <textarea required name="answer4Text" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter answer" rows="3">{{ (quiz is defined) ? quiz.answer4Text : '' }}</textarea>
+            <div class="form-check">
+                <input {{ (quiz.answer4State is defined and quiz.answer4State == true) ? 'checked' : '' }} name="answer4State" type="checkbox" class="form-check-input" id="answer4State">
+                <label class="form-check-label" for="answer4State">True</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="answerTrueText">If answer true</label>
+            <textarea required name="answerTrueText" class="form-control" id="answerTrueText" placeholder="Enter info if true" rows="3">{{ (quiz is defined) ? quiz.question : '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="answerFalseText">If answer false</label>
+            <textarea required name="answerFalseText" class="form-control" id="answerFalseText" placeholder="Enter info if false" rows="3">{{ (quiz is defined) ? quiz.question : '' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> {{ (quiz is defined) ? 'Edit' : 'Add' }}
+        </button>
+    </form>
+
+{% endblock %}
