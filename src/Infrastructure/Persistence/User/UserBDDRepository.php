@@ -36,18 +36,19 @@ class UserBDDRepository
      * @param string $email
      * @param string $firstname
      * @param string $lastname
+     * @param string $picture
      * @param string $password
      * @param string $description
      * @return bool
      */
-    public function addUser(string $email, string $firstname, string $lastname, string $password, string $description): bool
+    public function addUser(string $email, string $firstname, string $lastname, string $picture, string $password, string $description): bool
     {
         $salt = isset($_SERVER['SALT_CORAL']) ? $_SERVER['SALT_CORAL'] : $_ENV['SALT_CORAL'];
         $password = sha1($password . $salt);
         try {
-            $sql = "insert INTO User (firstname, lastname, email, password, description) VALUES (?, ?, ?, ?, ?)";
+            $sql = "insert INTO User (firstname, lastname, picture, email, password, description) VALUES (?, ?, ?, ?, ?, ?)";
             $preparedSQL = $this->pdo->prepare($sql);
-            $preparedSQL->execute([$firstname, $lastname, $email, $password, $description]);
+            $preparedSQL->execute([$firstname, $lastname, $picture, $email, $password, $description]);
             return true;
         } catch (PDOException $e) {
             return false;
@@ -59,6 +60,7 @@ class UserBDDRepository
      * @param string $email
      * @param string $firstname
      * @param string $lastname
+     * @param string $picture
      * @param string|null $password
      * @param string $description
      * @return bool
@@ -154,7 +156,7 @@ class UserBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$UserId]);
             $userInfo = $preparedSQL->fetch();
-            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'] , $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
+            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
         } catch (PDOException $e) {
             return null;
         }

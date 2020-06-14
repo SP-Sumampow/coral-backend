@@ -117,10 +117,11 @@ class BackOfficeUserAction extends Action
                         $email = $this->request->getParsedBody()["email"];
                         $lastname = $this->request->getParsedBody()["lastname"];
                         $firstname = $this->request->getParsedBody()["firstname"];
+                        $picture = $this->request->getParsedBody()["picture"];
                         $password = $this->request->getParsedBody()["password"];
                         $description = $this->request->getParsedBody()["description"];
 
-                        if ($this->userBDDRepository->addUser($email, $firstname, $lastname, $password, $description)) {
+                        if ($this->userBDDRepository->addUser($email, $firstname, $lastname,$picture, $password, $description)) {
                             $url = "?success=User added";
                             return $this->response->withRedirect('/backoffice/users' . $url, 301);
                         } else {
