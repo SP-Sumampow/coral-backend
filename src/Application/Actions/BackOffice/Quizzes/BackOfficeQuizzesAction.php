@@ -40,7 +40,7 @@ class BackOfficeQuizzesAction extends Action
                 $data["success"] = $this->request->getQueryParams()["success"];
             }
             $view = Twig::fromRequest($this->request);
-            return $view->render($this->response, 'quizzes-BackOffice.twig', $data);
+            return $view->render($this->response, 'quizzes_back_office.twig', $data);
         } else {
             return $this->response->withRedirect('/', 301);
         }

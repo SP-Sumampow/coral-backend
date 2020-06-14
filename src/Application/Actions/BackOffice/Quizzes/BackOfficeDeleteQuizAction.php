@@ -44,7 +44,7 @@ class BackOfficeDeleteQuizAction extends Action
                     return $this->response->withRedirect('/backoffice/quizzes'.$url, 301);
                 }
             } else {
-                return $view->render($this->response, 'quizzes-BackOffice.twig', []);
+                return $view->render($this->response, 'quizzes-back_office.twig', []);
             }
         } else {
             return $this->response->withRedirect('/', 301);

@@ -95,7 +95,7 @@ class BackOfficeQuizAction extends Action
                             return $this->response->withRedirect('/backoffice/quizzes' . $url, 301);
                         }
                     } else {
-                        return $view->render($this->response, 'quizzes-backOffice.twig', []);
+                        return $view->render($this->response, 'quizzes_back_office.twig', []);
                     }
                 } else {
                     $quizId = (int)$this->args["id"];
