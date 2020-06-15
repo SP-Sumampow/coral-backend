@@ -80,10 +80,10 @@ class PageAction extends Action
                          array(
                              "name" => "answer1",
                              "text" => "A: Végétal biensûr !",
-                             "state" => null,
+                             "state" => false,
                              "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
+                                 "title" => false,
+                                 "text" => "Dommage! Le squlette qui protège le corail est un minéral, les polybes qui vivent à l’intérieur son des animaux et enfin les algues qui vivent à l’intérieur des polybes sont des végétaux.",
                              ),
                          ),
                          array(
@@ -91,8 +91,8 @@ class PageAction extends Action
                              "text" => "B: Mineral vu comme c’est dur...",
                              "state" => null,
                              "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
+                                 "title" => false,
+                                 "text" => "Dommage! Le squlette qui protège le corail est un minéral, les polybes qui vivent à l’intérieur son des animaux et enfin les algues qui vivent à l’intérieur des polybes sont des végétaux.",
                              ),
                          ),
                          array(
@@ -100,7 +100,7 @@ class PageAction extends Action
                              "text" => "C: Les 3 trois à la fois !",
                              "state" => null,
                              "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
+                                 "title" => true,
                                  "text" => "",
                              ),
                          ),
@@ -109,8 +109,8 @@ class PageAction extends Action
                              "text" => "D: Un animal marin",
                              "state" => null,
                              "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
+                                 "title" => false,
+                                 "text" => "Dommage! Le squlette qui protège le corail est un minéral, les polybes qui vivent à l’intérieur son des animaux et enfin les algues qui vivent à l’intérieur des polybes sont des végétaux.",
                              ),
                          ),
                      ),
@@ -121,38 +121,26 @@ class PageAction extends Action
                          array(
                              "name" => "answer1",
                              "text" => "A: Une grosse poignée",
-                             "state" => null,
-                             "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
-                             ),
+                             "state" => false,
+                             "quizAnswer" => "Dommage, un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre.",
                          ),
                          array(
                              "name" => "answer2",
-                             "text" => "B: Animal",
-                             "state" => null,
-                             "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
-                             ),
+                             "text" => "B: C’est quoi le Zooxanthelle ?",
+                             "state" => false,
+                             "quizAnswer" => "Dommage, un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre.",
                          ),
                          array(
                              "name" => "answer3",
-                             "text" => "C: Minéal",
-                             "state" => null,
-                             "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
-                             ),
+                             "text" => "C: 100 000",
+                             "state" => false,
+                             "quizAnswer" => "Dommage, un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre.",
                          ),
                          array(
                              "name" => "answer4",
-                             "text" => "D: Les trois",
-                             "state" => null,
-                             "quizAnswer" => array(
-                                 "title" => "Vrai/faux",
-                                 "text" => "",
-                             ),
+                             "text" => "D: 1 million",
+                             "state" => true,
+                             "quizAnswer" => "Exact, un centimètre carré de corail abrite un million de zooxanthelles, qui lui fournit 90 à 95% de l'énergie dont il a besoin pour survivre.",
                          ),
                      ),
                  ),
@@ -174,80 +162,27 @@ class PageAction extends Action
                          "answer"  => array(
                              array(
                                  "name" => "answer1",
-                                 "text" => "A: 10%",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
-                             ),
-                             array(
-                                 "name" => "answer2",
-                                 "text" => "B: 20%",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
-                             ),
-                             array(
-                                 "name" => "answer3",
-                                 "text" => "C: 30%",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
-                             ),
-                             array(
-                                 "name" => "answer4",
-                                 "text" => "D: 40%",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
-                             ),
-                         ),
-                     ),
-                     "quiz2" => array(
-                         "question" => "Dans quel région d’Australie se situe la grande barrière?",
-                         "answer"  => array(
-                             array(
-                                 "name" => "answer1",
                                  "text" => "A: New South Wales",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
+                                 "state" => false,
+                                 "quizAnswer" => "Une autre fois, le Queensland est l’Etat Australien situé au Nord-Est du pays, son climas tropical est un véritable paradis pour les récifs coraliens.",
                              ),
                              array(
                                  "name" => "answer2",
                                  "text" => "B: Victoria",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
+                                 "state" => false,
+                                 "quizAnswer" => "Une autre fois, le Queensland est l’Etat Australien situé au Nord-Est du pays, son climas tropical est un véritable paradis pour les récifs coraliens.",
                              ),
                              array(
                                  "name" => "answer3",
                                  "text" => "C: Northern Territories",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
+                                 "state" => false,
+                                 "quizAnswer" => "Une autre fois, le Queensland est l’Etat Australien situé au Nord-Est du pays, son climas tropical est un véritable paradis pour les récifs coraliens.",
                              ),
                              array(
                                  "name" => "answer4",
                                  "text" => "D: Queensland",
-                                 "state" => null,
-                                 "quizAnswer" => array(
-                                     "title" => "Vrai/faux",
-                                     "text" => "",
-                                 ),
+                                 "state" => true,
+                                 "quizAnswer" => "Oui! Le Queensland est l’Etat Australien situé au Nord-Est du pays, son climas tropical est un véritable paradis pour les récifs coraliens.",
                              ),
                          ),
                      ),
@@ -257,28 +192,20 @@ class PageAction extends Action
                  "id" => 6,
                  "name" => "Actual situation",
                  "title" => "Mais que se passe t-il ?",
-                 "popUps" =>
-                     array(
+                 "article1" => array(
                          "name" => "pop up1",
                          "title" => "Le réchauffemnt des océans",
-                         "text" => "Le réchauffement des océans est le facteur principal du blanchiment des coraux.
-                     Si les tempérratures de surface des océans continuent d’augmenter,
-                      la fréquence et la gravité du blanchiment des coraux va également augmenter, 
-                          affectant probablement la capacité des récifs coralliens à s’addapter et à fournir la plupart des services que nous leur demandons"
+                         "text" => "Le réchauffement des océans est le facteur principal du blanchiment des coraux. Si les tempérratures de surface des océans continuent d’augmenter, la fréquence et la gravité du blanchiment des coraux va également augmenter, affectant probablement la capacité des récifs coralliens à s’addapter et à fournir la plupart des services que nous leur demandons"
                      ),
-                 array(
+                 "article2" => array(
                      "name" => "pop up2",
                      "title" => "L’acidification des océan",
-                     "text" => "Le dioxyde de carbone présent dans l’atmosphère est absorbé par les océans. 
-                        Ceci cause la baisse du pH des océans, entraînant l’acidification de ces derniers. 
-                        Cette diminution du pH a des conséquences négatives, surtout pour les organismes carbonatés océaniques tels que les récifs que les récifs corallliens. "
+                     "text" => "Le dioxyde de carbone présent dans l’atmosphère est absorbé par les océans. Ceci cause la baisse du pH des océans, entraînant l’acidification de ces derniers. Cette diminution du pH a des conséquences négatives, surtout pour les organismes carbonatés océaniques tels que les récifs que les récifs corallliens. "
                  ),
-                 array(
+                 "article3" => array(
                      "name" => "pop up3",
                      "title" => "L’élévation du niveaux des océans",
-                     "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté,
-                         même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique.
-                          Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
+                     "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté, même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique. Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
                  ),
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/bleaching%20process%20.mp4",
@@ -287,31 +214,27 @@ class PageAction extends Action
                      "answer"  => array(
                          "name" => "answer1",
                          "text" => "La surpêche",
-                         "state" => null,
+                         "state" => false,
+                         "quizAnswer" => "Lorsque la température de l’eau est trop élevé pour les algues à l’intérieur des corails, elles cessent de produire des nutriment pour le corail qui les expulse pour ne plus avoir à les nourrir.",
                      ),
                      array(
                          "name" => "answer2",
                          "text" => "La déforestation",
-                         "state" => null,
+                         "state" => true,
+                         "quizAnswer" => "Lorsque la température de l’eau est trop élevé pour les algues à l’intérieur des corails, elles cessent de produire des nutriment pour le corail qui les expulse pour ne plus avoir à les nourrir.",
                      ),
                      array(
                          "name" => "answer3",
                          "text" => "Le réchauffement climatique",
-                         "state" => null,
+                         "state" => false,
+                         "quizAnswer" => "Lorsque la température de l’eau est trop élevé pour les algues à l’intérieur des corails, elles cessent de produire des nutriment pour le corail qui les expulse pour ne plus avoir à les nourrir."
                      ),
                      array(
                          "name" => "answer4",
                          "text" => "La hausse du niveau de la mer",
-                         "state" => null,
+                         "state" => false,
+                         "quizAnswer" => "Lorsque la température de l’eau est trop élevé pour les algues à l’intérieur des corails, elles cessent de produire des nutriment pour le corail qui les expulse pour ne plus avoir à les nourrir.",
                      ),
-                 ),
-                 "quizAnswer" => array(
-                     "title" => "Vrai",
-                     "text" => "",
-                 ),
-                 array(
-                     "title" => "Faux",
-                     "text" => "",
                  ),
              );
          } else if( $coralId == 7) {
