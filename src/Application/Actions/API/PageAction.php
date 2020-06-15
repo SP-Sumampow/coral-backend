@@ -23,7 +23,6 @@ class PageAction extends Action
         $data = array();
          if ($coralId == 1) {
              $data = array(
-                 array(
                      "id" => 1,
                      "name" => "Explication",
                      "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
@@ -39,7 +38,6 @@ class PageAction extends Action
                          "title" => "Plongez à la découverte des coraux",
                          "text" => "Pour une immersion totale à travers ce webdocumentaire,\r\nil est préférable de porter un casque audio Utilisez le scroll ou les flèches du clavier pour naviguer",
                      ),
-                 )
              );
          } else if ($coralId == 2) {
              $data = array(
