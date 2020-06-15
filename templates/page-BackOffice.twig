@@ -1,8 +1,81 @@
 {% extends "backOffice.twig" %}
 
 {% block pageBackOffice %}
-    <h2>Page :</h2>
-    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Ajouter
-    </button>
+    <h2>{{ (page is defined) ? 'Update' : 'Add' }} a page :</h2>
+    <form method="post" action="/backoffice/page{{ (page is defined) ? '/' ~ page.id : '' }}">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Name</label>
+            <input name="name" type="text" class="form-control" placeholder="Enter page name"
+                   value="{{ (page is defined) ? page.name : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input name="title" type="text" class="form-control" placeholder="Enter page title"
+                   value="{{ (page is defined) ? page.title : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <textarea name="text" class="form-control" id="text" placeholder="Enter page text"
+                      rows="3">{{ (page is defined) ? page.text : '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="picture">Picture</label>
+            <input name="picture" type="text" class="form-control" placeholder="Enter page page "
+                   value="{{ (page is defined) ? page.picture : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="video">Video</label>
+            <input name="video" type="text" class="form-control" placeholder="Enter page video"
+                   value="{{ (page is defined) ? page.video : '' }}">
+        </div>
+        <div class="form-group">
+            <label for="article1">Article 1</label>
+            <select name="article1Id" id="article1">
+                {% for article in articles %}
+                    <option {{ (page is defined and article.id == page.article1Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="article1">Article 2</label>
+            <select name="article2Id" id="article2">
+                {% for article in articles %}
+                    <option {{ (page is defined and article.id == page.article2Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="article3Id">Article 3</label>
+            <select name="article3Id" id="article3Id">
+                {% for article in articles %}
+                    <option {{ (page is defined and article.id == page.article3Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quiz1">Quiz 1</label>
+            <select name="quiz1Id" id="quiz1">
+                {% for quiz in quizzes %}
+                    <option {{ (quiz is defined and quiz.id == page.quiz1Id) ? 'selected' : '' }} value="{{ quiz["id"] }}">{{ quiz.question }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quiz2">Quiz 2</label>
+            <select name="quiz2Id" id="quiz2">
+                {% for quiz in quizzes %}
+                    <option {{ (quiz is defined and quiz.id == page.quiz2Id) ? 'selected' : '' }} value="{{ quiz["id"] }}">{{ quiz.question }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            <span class="glyphicon glyphicon-align-left"
+                  aria-hidden="true"></span> {{ (page is defined) ? 'Edit' : 'Add' }}
+        </button>
+    </form>
 {% endblock %}

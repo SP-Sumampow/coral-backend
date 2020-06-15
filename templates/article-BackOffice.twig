@@ -9,15 +9,15 @@
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input required name="title" type="text" class="form-control" placeholder="Enter article title" value="{{ (article is defined) ? article.title : '' }}">
+            <input name="title" type="text" class="form-control" placeholder="Enter article title" value="{{ (article is defined) ? article.title : '' }}">
         </div>
         <div class="form-group">
             <label for="text">Text</label>
-            <textarea required name="text" class="form-control" id="text" placeholder="Enter article text" rows="3">{{ (article is defined) ? article.text : '' }}</textarea>
+            <textarea name="text" class="form-control" id="text" placeholder="Enter article text" rows="3">{{ (article is defined) ? article.text : '' }}</textarea>
         </div>
         <div class="form-group">
             <label for="video">Video</label>
-            <input required name="video" type="text" class="form-control" placeholder="Enter article video" value="{{ (article is defined) ? article.video : '' }}">
+            <input name="video" type="text" class="form-control" placeholder="Enter article video" value="{{ (article is defined) ? article.video : '' }}">
         </div>
         <div class="form-group">
             <label for="picture1">Picture 1</label>
