@@ -29,19 +29,16 @@ class PageAction extends Action
                      "picture" =>  null,
                      "title" => "Les coraux, la vie se meurt",
                      "video" => null,
-                     "music" => "http://167.71.55.113/assets/movies/main-song.mov",
-                     "textDisclame" => array(
+                     "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
+                     "article1" => array(
+                         "name" => "disclaimer",
                          "title" => "Attention",
                          "text" => "Ce site a été réalisé à des fins pédagogiques dans le cadre du cursus Bachelor de l’école HETIC.  Les contenus présentés n'ont pas fait l'objet d'une demande de droit d'utilisation.  Ce site ne sera en aucun cas exploité à des fins commerciales et ne sera pas publié."
                      ),
-                     "textInstruction" => array(
+                     "article2" => array(
                          "title" => "Plongez à la découverte des coraux",
-                         "textINstruction" => array(
-                             "instructionAudio" => "Pour une immersion totale à travers ce webdocumentaire, 
-                            il est préférable de porter un casque audio",
-                             "instructionControls" => "Utilisez le scroll ou les flèches du clavier pour naviguer"
-                         )
-                     )
+                         "text" => "Pour une immersion totale à travers ce webdocumentaire,\r\nil est préférable de porter un casque audio Utilisez le scroll ou les flèches du clavier pour naviguer",
+                     ),
                  )
              );
          } else if ($coralId == 2) {
@@ -57,8 +54,7 @@ class PageAction extends Action
                  "name" => "Position of corals on the maps",
                  "picture" =>  null,
                  "video" => null,
-                 "title1" => "Bienvenue dans la mer de Corail",
-                 "title2" => "Visitesz les recifs",
+                 "title" => "Visitez les récifs",
                  "text" => "Découvrez la Grande Barrière vue du ciel !",
              );
          } else if ($coralId == 4) {
@@ -66,51 +62,99 @@ class PageAction extends Action
                  "id" => 4,
                  "name" => "What is coral?",
                  "title" => "Qu'est ce qu'un corail ?",
-                 "popUps" => array(
-                     "popUp1" => array(
-                         "title" => "Et si vous aviez la même vue que les poissons ? ",
-                         "article" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, \r\nprincipalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!",
-                     ),
-                     "popUp2" => array(
-                         "title" => "Animal, minéral ou végétal?",
-                         "article" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!"
-                     ),
+                 "article1" => array(
+                     "name" => "pop up 1",
+                     "title" => "Et si vous aviez la même vue que les poissons ? ",
+                     "text" => "Au soleil couchant, un étonnant mirage se produit, un rayon vert apparaît à l’horizon. Il ne dure qu’une ou deux secondes et indique que la surface de l’eau est plus chaude que l’air.  Ces couleurs fantôme demeurent cachées à moins que l’on sache où et comment regarder. C’est exactement ce que propose de faire le moniteur de plongée Padi Colwell, il va observer les profondeurs de la Mer de Corail sous un nouvel aspect.  En plongeant avec des lumières bleues, il pourra observer le récif comme le voient les poissons.  On ne s’attend pas à cela, tout un monde caché se révèle. Filtrée par des verres jaunes, la lumière ultra-violette éclaire un univers que seul les poissons perçoivent. Elle nous plonge au cœur d’un royaume secret.  De nombreux animaux récifaux émettent des couleurs fluorescentes invisibles à nos yeux. Les ultras-violets révèlent des couleurs insoupçonnée, mais également des créatures cachées. Certains animaux sont invisibles à l’œil humain, mais visible pour les poissons.  Les coraux brillent à leur façon, ils utilisent les couleurs fluorescentes pour nourrir les algues qu’ils abritent, d’autres ont les tentacules vivement colorés à la limite du psychédélique pour attirer les proies.  De nombreux scientifiques affirment que l’on aura compris le cerveau humain avant de comprendre la Grande Barrière de Corail, une façon de dire qu’elle est trop riche pour que l’on décrypte un jour.",
+                 ),
+                 "article2" => array(
+                     "name" => "pop up 2",
+                     "title" => "Animal, minéral ou végétal?",
+                     "text" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!"
                  ),
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/immersive-ch1.mp4",
-                 "quiz" => array(
-                     "question" => "A quel reigne appartient le corail?",
+                 "quiz1" => array(
+                     "question" => "Le corail est animal, minéral ou un végétal?",
                      "answer"  => array(
                          array(
                              "name" => "answer1",
-                             "text" => "A: Végétal",
+                             "text" => "A: Végétal biensûr !",
                              "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
+                         ),
+                         array(
+                             "name" => "answer2",
+                             "text" => "B: Mineral vu comme c’est dur...",
+                             "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
+                         ),
+                         array(
+                             "name" => "answer3",
+                             "text" => "C: Les 3 trois à la fois !",
+                             "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
+                         ),
+                         array(
+                             "name" => "answer4",
+                             "text" => "D: Un animal marin",
+                             "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
+                         ),
+                     ),
+                 ),
+                 "quiz2" => array(
+                     "question" => "Un centimètre carré de corail abrite combien de Zooxanthelles ?",
+                     "answer"  => array(
+                         array(
+                             "name" => "answer1",
+                             "text" => "A: Une grosse poignée",
+                             "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
                          ),
                          array(
                              "name" => "answer2",
                              "text" => "B: Animal",
                              "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
                          ),
                          array(
                              "name" => "answer3",
                              "text" => "C: Minéal",
                              "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
                          ),
                          array(
                              "name" => "answer4",
                              "text" => "D: Les trois",
                              "state" => null,
+                             "quizAnswer" => array(
+                                 "title" => "Vrai/faux",
+                                 "text" => "",
+                             ),
                          ),
                      ),
-
-                 ),
-                 "quizAnswer" => array(
-                     "title" => "Vrai",
-                     "text" => "",
-                 ),
-                 array(
-                     "title" => "Faux",
-                     "text" => "",
                  ),
              );
          } else if ($coralId == 5 ) {
@@ -132,32 +176,38 @@ class PageAction extends Action
                                  "name" => "answer1",
                                  "text" => "A: 10%",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer2",
                                  "text" => "B: 20%",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer3",
                                  "text" => "C: 30%",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer4",
                                  "text" => "D: 40%",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
-                         ),
-                     ),
-                     "quizAnswer1" => array(
-                         array(
-                             "title" => "Vrai",
-                             "text" => "",
-                         ),
-                         array(
-                             "title" => "Faux",
-                             "text" => "",
                          ),
                      ),
                      "quiz2" => array(
@@ -167,38 +217,44 @@ class PageAction extends Action
                                  "name" => "answer1",
                                  "text" => "A: New South Wales",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer2",
                                  "text" => "B: Victoria",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer3",
                                  "text" => "C: Northern Territories",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
                              array(
                                  "name" => "answer4",
                                  "text" => "D: Queensland",
                                  "state" => null,
+                                 "quizAnswer" => array(
+                                     "title" => "Vrai/faux",
+                                     "text" => "",
+                                 ),
                              ),
-                         ),
-                     ),
-                     "quizAnswer2" => array(
-                         array(
-                             "title" => "Vrai",
-                             "text" => "",
-                         ),
-                         array(
-                             "title" => "Faux",
-                             "text" => "",
                          ),
                      ),
              );
          } else if ($coralId == 6 ) {
              $data = array(
-                 "id" => 06,
+                 "id" => 6,
                  "name" => "Actual situation",
                  "title" => "Mais que se passe t-il ?",
                  "popUps" =>
