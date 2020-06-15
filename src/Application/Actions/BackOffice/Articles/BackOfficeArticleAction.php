@@ -29,25 +29,25 @@ class BackOfficeArticleAction extends Action
         $hasName = isset($name) && !empty($name);
 
         $title = $this->request->getParsedBody()["title"];
-        $hasTitle = isset($title) && !empty($title);
+        $hasTitle = isset($title);
 
         $text = $this->request->getParsedBody()["text"];
-        $hasText = isset($text) && !empty($text);
+        $hasText = isset($text);
 
         $video = $this->request->getParsedBody()["video"];
-        $hasVideo = isset($video) && !empty($video);
+        $hasVideo = isset($video);
 
         $picture1 = $this->request->getParsedBody()["picture1"];
-        $hasPicture1 = isset($picture1) && !empty($picture1);
+        $hasPicture1 = isset($picture1);
 
         $picture2 = $this->request->getParsedBody()["picture2"];
-        $hasPicture2 = isset($picture2) && !empty($picture2);
+        $hasPicture2 = isset($picture2);
 
         $picture3 = $this->request->getParsedBody()["picture3"];
-        $hasPicture3 = isset($picture3) && !empty($picture3);
+        $hasPicture3 = isset($picture3);
 
         $picture4 = $this->request->getParsedBody()["picture4"];
-        $hasPicture4 = isset($picture4) && !empty($picture4);
+        $hasPicture4 = isset($picture4);
 
 
         return $hasName && $hasTitle && $hasText && $hasVideo && $hasPicture1 && $hasPicture2 && $hasPicture3 && $hasPicture4;

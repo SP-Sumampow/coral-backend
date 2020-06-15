@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Article;
+namespace App\Infrastructure\Persistence\Page;
 
-use App\Domain\Article\Article;
+use App\Domain\Page\Page;
 use \PDO;
 
 /**
@@ -32,47 +32,71 @@ class PageBDDRepository
     }
 
 
-    public function addPage(string $name, string $title, string $picture, string $video, ?int $article1Id, ?int $article2Id, ?int $quiz1Id, ?int $quizId): bool
+    /**
+     * @param string $name
+     * @param string $title
+     * @param string $text
+     * @param string $picture
+     * @param string $video
+     * @param string|null $article1Id
+     * @param string|null $article2Id
+     * @param string|null $article3Id
+     * @param string|null $quiz1Id
+     * @param string|null $quiz2Id
+     * @return bool
+     */
+    public function addPage(string $name, string $title, string $text, string $picture, string $video, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
         try {
-            $sql = "INSERT INTO Page (name, title, picture, video, quiz1_id, quiz2_id, article1_id, article2_id) VALUES (?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO Page (id, name, title, text, picture, video, quiz1_id, quiz2_id, article1_id, article2_id, article3_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             $preparedSQL = $this->pdo->prepare($sql);
-            return $preparedSQL->execute([$name, $title, $picture, $video, $article1Id, $article2Id, $quiz1Id, $quizId]);
+            $result = $preparedSQL->execute([$name, $title, $text, $picture, $video, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id]);
+            return $result;
         } catch (PDOException $e) {
             return false;
         }
-        return true;
-    }
-
-
-    public function updatePage(int $id, string $name, string $title, string $text, string $video, string $picture1, string $picture2, string $picture3, string $picture4): bool
-    {
-//        try {
-//            $sql = "UPDATE Article SET name=?,title=?,text=?,video=?,picture1=?,picture2=?,picture3=?,picture4=? WHERE id=?";
-//            $preparedSQL = $this->pdo->prepare($sql);
-//            $paramArray = [$name, $title, $text, $video, $picture1, $picture2, $picture3, $picture4, $id];
-//            $preparedSQL->execute($paramArray);
-//            return $preparedSQL->execute($paramArray);
-//        } catch (PDOException $e) {
-//            return false;
-//        }
-        return true;
     }
 
 
     /**
-     * @param int $articleId
+     * @param int $id
+     * @param string $name
+     * @param string $title
+     * @param string $picture
+     * @param string $video
+     * @param int|null $article1Id
+     * @param int|null $article2Id
+     * @param int|null $quiz1Id
+     * @param int|null $quizId
      * @return bool
      */
-    public function deleteArticleById(int $articleId): bool
+    public function updatePage(int $id, string $name, string $title, string $text, string $picture, string $video, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
-//        try {
-//            $sql = "DELETE FROM Article WHERE id = ?";
-//            $preparedSQL = $this->pdo->prepare($sql);
-//            return $preparedSQL->execute([$articleId]);;
-//        } catch (PDOException $e) {
-//            return false;
-//        }
+        try {
+            $sql = "UPDATE Page SET name=?,title=?, text=?, picture=?,video=?,quiz1_id=?,quiz2_id=?,article1_id=?,article2_id=?,article3_id=? WHERE id=?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $paramArray = [$name, $title, $text, $picture, $video, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id, $id];
+            $preparedSQL->execute($paramArray);
+            return $preparedSQL->execute($paramArray);
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+
+    /**
+     * @param int $pageId
+     * @return bool
+     */
+    public function deletePageById(int $pageId): bool
+    {
+        try {
+            $sql = "DELETE FROM Page WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            return $preparedSQL->execute([$pageId]);;
+        } catch (PDOException $e) {
+            return false;
+        }
         return true;
     }
 
@@ -82,33 +106,31 @@ class PageBDDRepository
     public function findAll(): ?array
     {
         try {
-            $sql = "SELECT * FROM Article";
+            $sql = "SELECT * FROM Page";
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute();
-            $articles = $preparedSQL->fetchAll();
-            return $articles;
+            $pages = $preparedSQL->fetchAll();
+            return $pages;
         } catch (PDOException $e) {
             return null;
         }
-        return [];
     }
 
-
     /**
-     * @param int $articleId
-     * @return Article|null
+     * @param int $pageId
+     * @return Page|null
      */
-    public function findArticleById(int $articleId): ?Article
+    public function findPageById(int $pageId): ?Page
     {
-//        try {
-//            $sql = "SELECT * FROM Article WHERE id = ?";
-//            $preparedSQL = $this->pdo->prepare($sql);
-//            $preparedSQL->execute([$articleId]);
-//            $articleInfo = $preparedSQL->fetch();
-//            return new Article((int)$articleInfo["id"], $articleInfo["name"], $articleInfo["title"], $articleInfo["text"], $articleInfo["video"], $articleInfo["picture1"], $articleInfo["picture2"], $articleInfo["picture3"], $articleInfo["picture4"]);
-//        } catch (PDOException $e) {
-//            return null;
-//        }
+        try {
+            $sql = "SELECT * FROM Page WHERE id = ?";
+            $preparedSQL = $this->pdo->prepare($sql);
+            $preparedSQL->execute([$pageId]);
+            $pageInfo = $preparedSQL->fetch();
+            return new Page((int)$pageInfo["id"], $pageInfo["name"], $pageInfo["title"], $pageInfo["text"], $pageInfo["picture"], $pageInfo["video"], (int)$pageInfo["article1_id"], (int)$pageInfo["article2_id"], (int)$pageInfo["article3_id"], (int)$pageInfo["quiz1_id"], (int)$pageInfo["quiz2_id"]);
+        } catch (PDOException $e) {
+            return null;
+        }
         return null;
     }
 }

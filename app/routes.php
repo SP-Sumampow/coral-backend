@@ -14,12 +14,14 @@ use App\Application\Actions\BackOffice\Users\BackOfficeUserAction;
 use App\Application\Actions\BackOffice\Users\BackOfficeDeleteUserAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePageAction;
 use App\Application\Actions\BackOffice\Pages\BackOfficePagesAction;
+use App\Application\Actions\BackOffice\Pages\BackOfficePageDeleteAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizzesAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeDeleteQuizAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeArticlesAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeArticleAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeDeleteArticleAction;
+
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
@@ -54,7 +56,7 @@ return function (App $app) {
         $group->get('/quiz/{id}', BackOfficeQuizAction::class);
         $group->get('/quiz/delete/{id}', BackOfficeDeleteQuizAction::class);
 
-        // Aricle CRUD
+        // Article CRUD
         $group->get('/articles', BackOfficeArticlesAction::class);
         $group->get('/article', BackOfficeArticleAction::class);
         $group->post('/article', BackOfficeArticleAction::class);
@@ -64,10 +66,11 @@ return function (App $app) {
 
         // PAGES CRUD
         $group->get('/pages', BackOfficePagesAction::class);
-        $group->get('/page/{id}', BackOfficePageAction::class);
+        $group->get('/page', BackOfficePageAction::class);
+        $group->post('/page', BackOfficePageAction::class);
         $group->post('/page/{id}', BackOfficePageAction::class);
-        $group->put('/page/{id}', BackOfficePageAction::class);
-        $group->delete('/page/{id}', BackOfficePageAction::class);
+        $group->get('/page/{id}', BackOfficePageAction::class);
+        $group->get('/page/delete/{id}', BackOfficePageDeleteAction::class);
 
         // SESSIONS
         $group->get('/login', BackOfficeLoginAction::class);

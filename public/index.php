@@ -46,7 +46,7 @@ $container = $containerBuilder->build();
 // Instantiate the app
 AppFactory::setContainer($container);
 // Create Twig
-$twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
+$twig = Twig::create(__DIR__ . '/../templates', ['cache' => false, 'debug' => true]);
 
 $app = AppFactory::create();
 
