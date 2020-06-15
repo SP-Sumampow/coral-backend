@@ -40,32 +40,30 @@ class APIPagesAction extends Action
      */
     protected function action(): Response
     {
-        if (isset($this->args["id"])) {
-            $pageId = (int)$this->args["id"];
-            $page = $this->pageBDDRepository->findPageById($pageId);
 
-            if (isset($page)) {
-                $pageInfo = [
-                    'id' => $page->id,
-                    'name' => $page->name,
-                    'title' => $page->title,
-                    'text' => $page->text,
-                    'picture' => $page->picture,
-                    'video' => $page->video,
-                    'music' => $page->music,
-                    "article1" => $this->articleBDDRepository->findArticleById((int)$page->article1Id),
-                    "article2" => $this->articleBDDRepository->findArticleById((int)$page->article2Id),
-                    "article3" => $this->articleBDDRepository->findArticleById((int)$page->article3Id),
-                    "quiz1" => $this->quizBDDRepository->findQuizzById((int)$page->quiz1Id),
-                    "quiz2" => $this->quizBDDRepository->findQuizzById((int)$page->quiz2Id)
-                ];
-                return $this->respondWithData($pageInfo);
-            } else {
-                return $this->respondWithData(["error" => "Page id not found"], 404);
-            }
-        } else {
-            return $this->respondWithData(["error" => "Page id is required"], 404);
+        $pagesInfo = [];
+        $pages = $this->pageBDDRepository->findAll();
+
+
+        foreach ($pages as $page) {
+
+            $pageInfo = [
+                'id' => $page["id"],
+                'name' => $page["name"],
+                'title' => $page["title"],
+                'text' => $page["text"],
+                'picture' => $page["picture"],
+                'video' => $page["video"],
+                'music' => $page["music"],
+                "article1" => $this->articleBDDRepository->findArticleById((int)$page["article1_id"]),
+                "article2" => $this->articleBDDRepository->findArticleById((int)$page["article2_id"]),
+                "article3" => $this->articleBDDRepository->findArticleById((int)$page["article3_id"]),
+                "quiz1" => $this->quizBDDRepository->findQuizzById((int)$page["quiz1_id"]),
+                "quiz2" => $this->quizBDDRepository->findQuizzById((int)$page["quiz2_id"])
+            ];
+            array_push($pagesInfo, $pageInfo);
         }
 
+        return $this->respondWithData($pagesInfo);
     }
 }
