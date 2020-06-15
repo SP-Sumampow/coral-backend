@@ -26,7 +26,7 @@ class PageAction extends Action
                  array(
                      "id" => 1,
                      "name" => "Explication",
-                     "picture" =>  null,
+                     "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                      "title" => "Les coraux, la vie se meurt",
                      "video" => null,
                      "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
@@ -45,7 +45,7 @@ class PageAction extends Action
              $data = array(
                  "id" => 2,
                  "name" => "Introduction",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
              );
@@ -53,7 +53,7 @@ class PageAction extends Action
              $data = array(
                  "id" => 3,
                  "name" => "Position of corals on the maps",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => null,
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "title" => "Visitez les récifs",
@@ -74,7 +74,7 @@ class PageAction extends Action
                      "title" => "Animal, minéral ou végétal?",
                      "text" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!"
                  ),
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/immersive-ch1.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "quiz1" => array(
@@ -157,8 +157,9 @@ class PageAction extends Action
                      "article1" => array(
                          "title" => "L’incroyable “Triangle de Corail”",
                          "text" => "Le Triangle de corail est l’épicentre de la biodiversité marine de la planète.  Il possède plus de biodiversité que partout ailleurs dans le monde: 76% des espèces de coraux, et 56% des poissons de récifs coralliens dans la région Indo-Pacifique.  L’épicentre de cette diversité corallienne se trouve dans la péninsule de Papouasie indonésienne. Il est fréquenté par la baleine bleue, les dauphins, les marsouins, et le dugong en voie de disparition.",
+                         "video" => "http://167.71.55.113/assets/movies/rajaampat.mp4",
                      ),
-                     "picture" =>  null,
+                     "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                      "video" => "http://167.71.55.113/assets/movies/chapter-2.mp4",
                      "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                      "quiz1" => array(
@@ -211,7 +212,7 @@ class PageAction extends Action
                      "title" => "L’élévation du niveaux des océans",
                      "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté, même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique. Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
                  ),
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/bleaching%20process%20.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "quiz" => array(
@@ -247,7 +248,7 @@ class PageAction extends Action
                  "id" => 7,
                  "name" => "bleaching status",
                  "title" => "Le blanchiment devient régulier",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
@@ -290,7 +291,7 @@ class PageAction extends Action
                  "id" => 8,
                  "name" => "situation up to date",
                  "title" => " Aujourd’hui, 50% sont déjà morts ...",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
@@ -334,7 +335,7 @@ class PageAction extends Action
                  "id" => 9,
                  "name" => "what we can do",
                  "title" => "Il est encore temps d’agir...",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => null,
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
@@ -350,7 +351,7 @@ class PageAction extends Action
                  "name" => "associations",
                  "title" => "Soutenez les associations",
                  "article" => "",
-                 "picture" =>  null,
+                 "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => null,
                  "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
              );
