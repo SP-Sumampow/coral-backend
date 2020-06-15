@@ -6,10 +6,7 @@ namespace App\Infrastructure\Persistence\Article;
 use App\Domain\Article\Article;
 use \PDO;
 
-/**
- * Class UserBDDRepository
- * @package App\Infrastructure\Persistence\User
- */
+
 class ArticleBDDRepository
 {
 
@@ -20,7 +17,7 @@ class ArticleBDDRepository
 
 
     /**
-     * UserBDDRepository constructor.
+     * ArticleBDDRepository constructor.
      */
     public function __construct()
     {

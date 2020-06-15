@@ -12,9 +12,6 @@ use Slim\Views\Twig;
 class BackOfficeArticlesAction extends Action
 {
 
-    /**
-     * @var ArticleBDDRepository
-     */
     private $articleBDDRepository;
 
     public function __construct(LoggerInterface $logger)

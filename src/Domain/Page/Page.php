@@ -39,27 +39,27 @@ class Page implements JsonSerializable
     public $video;
 
     /**
-     * @var int
+     * @var ?int
      */
     public $article1Id;
 
     /**
-     * @var int
+     * @var ?int
      */
     public $article2Id;
 
     /**
-     * @var Quiz
+     * @var ?int
      */
     public $quiz1Id;
 
     /**
-     * @var Quiz
+     * @var int
      */
     public $quiz2Id;
 
 
-    public function __construct(int $id, string $name, string $title, string $picture, string $video, int $article1Id, int $article2Id, int $quiz1Id, int $quiz2Id)
+    public function __construct(int $id, string $name, string $title, string $picture, string $video, ?int $article1Id, ?int $article2Id, ?int $quiz1Id, ?int $quiz2Id)
     {
         $this->id = $id;
         $this->name = $name;
