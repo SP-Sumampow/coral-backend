@@ -242,7 +242,7 @@ class PageAction extends Action
                  ),
              );
          } else if( $coralId == 7) {
-             array(
+             $data = array(
                  "id" => 7,
                  "name" => "bleaching status",
                  "title" => "Le blanchiment devient régulier",
