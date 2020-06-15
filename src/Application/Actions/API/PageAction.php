@@ -244,42 +244,40 @@ class PageAction extends Action
                  "title" => "Le blanchiment devient régulier",
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
-                 "article" => array(
+                 "article1" => array(
                      "title" => "Le phénomène de Blanchissement",
                      "text" => "Tous les coraux des mers chaudes vivant près de la surface abritent des symbiotiques microscopiques appelés les zooxanthelles.  Ce sont des algues qui utilisent les déchets métaboliques des coraux pour faire la photosynthèse. En échange d'un abri, et d'une exposition lumineuse suffisante, les zooxanthelles fournissent à leur hôte de l'oxygène, ainsi que les restes de nutriments produits n’ayant pas été consommés, dont le corail se nourrit.\r\n Or le corail, en situation de stress, peut expulser ses zooxanthelles.\r\n Les algues fournissent presque 90% de leur énergie grâce à la photosynthèse, c’est pourquoi le blanchiment mène à la mort de certaines espèces de coraux. Le phénomène a lieu en premier lieu à cause du changement de température des océans, de bactéries causant des maladies, de la pollution et de l’acidification des océans liées aux émissions de gaz à effet de serre dans l’atmosphère.\r\n Suite à un stress causé par divers facteurs, le corail ne reconnait plus la zooxanthelle comme son symbiote. Alors la symbiose entre les coraux et celle-ci s’arrêtent ce qui entrainent ainsi la perte de ces mico-algue et un blanchissement rapide de l’hôte corallien. Ce qu’on appelle le phénomène de Blanchissement !",
+                     "picture" => null,
                  ),
                  "quiz" => array(
                      "question" => "Combien d’épisode de blachissement mondiale des coraux on eu lieu?",
                      "answer"  => array(
-                         "name" => "answer1",
-                         "text" => "A: 0",
-                         "state" => null,
-                     ),
-                     array(
-                         "name" => "answer2",
-                         "text" => "B: 1",
-                         "state" => null,
-                     ),
-                     array(
-                         "name" => "answer3",
-                         "text" => "C: 2",
-                         "state" => null,
-                     ),
-                     array(
-                         "name" => "answer4",
-                         "text" => "D: 3",
-                         "state" => null,
+                         array(
+                             "name" => "answer1",
+                             "text" => "A: 0",
+                             "state" => false,
+                             "quizAnswer" => "Dommage, depuis les années 80, deux phases de blanchissement de masse ont touché les coraux du globe, et ces phénomènes tendent à se raprocher temporèlement.",
+                         ),
+                         array(
+                             "name" => "answer2",
+                             "text" => "B: 1",
+                             "state" => false,
+                             "quizAnswer" => "Dommage, depuis les années 80, deux phases de blanchissement de masse ont touché les coraux du globe, et ces phénomènes tendent à se raprocher temporèlement.",
+                         ),
+                         array(
+                             "name" => "answer3",
+                             "text" => "C: 2",
+                             "state" => true,
+                             "quizAnswer" => "Vous avez juste ! Depuis les années 80, deux phases de blanchissement de masse ont touché les coraux du globe, et ces phénomènes tendent à se raprocher temporèlement.",
+                         ),
+                         array(
+                             "name" => "answer4",
+                             "text" => "D: 3",
+                             "state" => false,
+                             "quizAnswer" => "Dommage, depuis les années 80, deux phases de blanchissement de masse ont touché les coraux du globe, et ces phénomènes tendent à se raprocher temporèlement.",
+                         ),
                      ),
                  ),
-                 "quizAnswer" => array(
-                     "title" => "Vrai",
-                     "text" => "",
-                 ),
-                 array(
-                     "title" => "Faux",
-                     "text" => "",
-                 ),
-
              );
          };
 
