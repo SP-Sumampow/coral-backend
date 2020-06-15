@@ -95,7 +95,7 @@ class BackOfficeQuizAction extends Action
                             return $this->response->withRedirect('/backoffice/quizzes' . $url, 301);
                         }
                     } else {
-                        return $view->render($this->response, 'quizzes-backOffice.twig', []);
+                        return $view->render($this->response, 'quizzes_back_office.twig', []);
                     }
                 } else {
                     $quizId = (int)$this->args["id"];
@@ -103,7 +103,7 @@ class BackOfficeQuizAction extends Action
                     $quiz = $this->quizBDDRepository->findQuizzById($quizId);
                     if (isset($quiz)) {
                         return $view->render($this->response, 'quiz-BackOffice.twig', [
-                            'quiz' => $this->quizBDDRepository->findQuizzById($quizId)
+                            'quiz' => $quiz
                         ]);
                     } else {
                         $url = "?error=Quiz not found";

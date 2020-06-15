@@ -25,7 +25,7 @@ class BackOfficePagesAction extends Action
         $view = Twig::fromRequest($this->request);
 
         if (isset($_SESSION["userId"])) {
-            return $view->render($this->response, 'pages-BackOffice.twig', [
+            return $view->render($this->response, 'pages_back_office.twig', [
                 'name' => "coucou"
             ]);
         } else {

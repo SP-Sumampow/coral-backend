@@ -17,6 +17,9 @@ use App\Application\Actions\BackOffice\Pages\BackOfficePagesAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizzesAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeQuizAction;
 use App\Application\Actions\BackOffice\Quizzes\BackOfficeDeleteQuizAction;
+use App\Application\Actions\BackOffice\Articles\BackOfficeArticlesAction;
+use App\Application\Actions\BackOffice\Articles\BackOfficeArticleAction;
+use App\Application\Actions\BackOffice\Articles\BackOfficeDeleteArticleAction;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
@@ -50,6 +53,14 @@ return function (App $app) {
         $group->post('/quiz/{id}', BackOfficeQuizAction::class);
         $group->get('/quiz/{id}', BackOfficeQuizAction::class);
         $group->get('/quiz/delete/{id}', BackOfficeDeleteQuizAction::class);
+
+        // Aricle CRUD
+        $group->get('/articles', BackOfficeArticlesAction::class);
+        $group->get('/article', BackOfficeArticleAction::class);
+        $group->post('/article', BackOfficeArticleAction::class);
+        $group->post('/article/{id}', BackOfficeArticleAction::class);
+        $group->get('/article/{id}', BackOfficeArticleAction::class);
+        $group->get('/article/delete/{id}', BackOfficeDeleteArticleAction::class);
 
         // PAGES CRUD
         $group->get('/pages', BackOfficePagesAction::class);
