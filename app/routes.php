@@ -21,6 +21,7 @@ use App\Application\Actions\BackOffice\Quizzes\BackOfficeDeleteQuizAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeArticlesAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeArticleAction;
 use App\Application\Actions\BackOffice\Articles\BackOfficeDeleteArticleAction;
+use App\Application\Actions\API\Page\APIPagesAction;
 
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
@@ -87,4 +88,10 @@ return function (App $app) {
         $group->get('/coral/{id}', CoralAction::class);
         $group->get('/page/{id}', PageAction::class);
     });
+
+    $app->group('/api2', function (Group $group) {
+        $group->get('/team', TeamCoralAction::class);
+        $group->get('/page/{id}', APIPagesAction::class);
+    });
+
 };
