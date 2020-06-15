@@ -322,6 +322,20 @@ class PageAction extends Action
                      ),
                  ),
              );
+         } else if ( $coralId == 9 ) {
+             array(
+                 "id" => 9,
+                 "name" => "what we can do",
+                 "title" => "Il est encore temps d’agir...",
+                 "picture" =>  null,
+                 "video" => null,
+                 "article1" => array(
+                     "title" => "Richesse exceptionnelle d’un récif coralien",
+                     "text" => "Pour essayer d'aider l'écosystème à continuer de fournir les services écologiques nécessaires, des méthodes très récentes sont apparues, comme la restauration écologique active. Il faut considérer ces méthodes avec prudence car de nos jours il est impossible de recréer un récif comme ceux présents naturellement. Si nous ne voulons pas perdre la richesse en biodiversité, il faut agir localement, mais surtout globalement. Limiter le réchauffement climatique à moins de 2 °C est l'urgence absolue. Chacun peut aussi agir en en parlant autour de soi, en essayant d'adopter un mode de vie plus respectueux de l'environnement et en faisant un petit geste : l'adoption d’un corail ! Il est donc important d’agir immédiatement, en sensibilisant en premier lieu les populations qui en dépendent directement.",
+                     "picture1" => null,
+                     "picture2" => null,
+                 ),
+             );
          };
 
         return $this->respondWithData($data);
