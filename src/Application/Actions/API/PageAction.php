@@ -279,6 +279,49 @@ class PageAction extends Action
                      ),
                  ),
              );
+         } else if ( $coralId == 8 ) {
+             $data = array(
+                 "id" => 8,
+                 "name" => "situation up to date",
+                 "title" => " Aujourd’hui, 50% sont déjà morts ...",
+                 "picture" =>  null,
+                 "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
+                 "article1" => array(
+                     "title" => "Une autre concéquence",
+                     "text" => "L’impact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.\r\nEn effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.\r\nPour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
+                     "picture1" => null,
+                     "picture2" => null,
+                 ),
+                 "quiz" => array(
+                     "question" => "Parmis ces propositions, laquelle est vrais?",
+                     "answer"  => array(
+                         array(
+                             "name" => "answer1",
+                             "text" => "A: Une photosynthèse des algues à l’intérieur des polybes impossible",
+                             "state" => false,
+                             "quizAnswer" => "Et non ! Les coraux protège nos côtes de la corosion engendré par les tempêtes.",
+                         ),
+                         array(
+                             "name" => "answer2",
+                             "text" => "B:Sans coraux, les failles tectoniques seront plus active",
+                             "state" => false,
+                             "quizAnswer" => "Et non ! Les coraux protège nos côtes de la corosion engendré par les tempêtes.",
+                         ),
+                         array(
+                             "name" => "answer3",
+                             "text" => "C: Une hausse du niveau de la mer qui menace l’environnement des coraux",
+                             "state" => true,
+                             "quizAnswer" => "Yup !Les coraux protège nos côtes de la corosion engendré par les tempêtes.",
+                         ),
+                         array(
+                             "name" => "answer4",
+                             "text" => "D: Une réduction de la surface de déploiement des coraux",
+                             "state" => false,
+                             "quizAnswer" => "Et non ! Les coraux protège nos côtes de la corosion engendré par les tempêtes.",
+                         ),
+                     ),
+                 ),
+             );
          };
 
         return $this->respondWithData($data);
