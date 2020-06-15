@@ -47,6 +47,12 @@ class PageBDDRepository
      */
     public function addPage(string $name, string $title, string $text, string $picture, string $video, string $music, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
+        $article1Id = empty($article1Id) ? null : $article1Id;
+        $article2Id = empty($article2Id) ? null : $article2Id;
+        $article3Id = empty($article3Id) ? null : $article3Id;
+        $quiz1Id = empty($quiz1Id) ? null : $quiz1Id;
+        $quiz2Id = empty($quiz2Id) ? null : $quiz2Id;
+        
         try {
             $sql = "INSERT INTO Page (id, name, title, text, picture, video, music, quiz1_id, quiz2_id, article1_id, article2_id, article3_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             $preparedSQL = $this->pdo->prepare($sql);
@@ -72,6 +78,12 @@ class PageBDDRepository
      */
     public function updatePage(int $id, string $name, string $title, string $text, string $picture, string $video, string $music, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
+        $article1Id = empty($article1Id) ? null : $article1Id;
+        $article2Id = empty($article2Id) ? null : $article2Id;
+        $article3Id = empty($article3Id) ? null : $article3Id;
+        $quiz1Id = empty($quiz1Id) ? null : $quiz1Id;
+        $quiz2Id = empty($quiz2Id) ? null : $quiz2Id;
+
         try {
             $sql = "UPDATE Page SET name=?,title=?, text=?, picture=?,video=?, music=?, quiz1_id=?,quiz2_id=?,article1_id=?,article2_id=?,article3_id=? WHERE id=?";
             $preparedSQL = $this->pdo->prepare($sql);
@@ -127,7 +139,11 @@ class PageBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$pageId]);
             $pageInfo = $preparedSQL->fetch();
-            return new Page((int)$pageInfo["id"], $pageInfo["name"], $pageInfo["title"], $pageInfo["text"], $pageInfo["picture"], $pageInfo["video"], $pageInfo["music"],  (int)$pageInfo["article1_id"], (int)$pageInfo["article2_id"], (int)$pageInfo["article3_id"], (int)$pageInfo["quiz1_id"], (int)$pageInfo["quiz2_id"]);
+            if (isset($pageInfo["id"])) {
+                return new Page((int)$pageInfo["id"], $pageInfo["name"], $pageInfo["title"], $pageInfo["text"], $pageInfo["picture"], $pageInfo["video"], $pageInfo["music"],  (int)$pageInfo["article1_id"], (int)$pageInfo["article2_id"], (int)$pageInfo["article3_id"], (int)$pageInfo["quiz1_id"], (int)$pageInfo["quiz2_id"]);
+            } else {
+                return null;
+            }
         } catch (PDOException $e) {
             return null;
         }

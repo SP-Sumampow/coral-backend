@@ -43,7 +43,7 @@ class BackOfficePageAction extends Action
         $hasName = isset($name) && !empty($name);
 
         $title = $this->request->getParsedBody()["title"];
-        $hasTitle = isset($title) && !empty($title);
+        $hasTitle = isset($title);
 
         $text = $this->request->getParsedBody()["text"];
         $hasText = isset($text);

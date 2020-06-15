@@ -39,6 +39,7 @@
         <div class="form-group">
             <label for="article1">Article 1</label>
             <select name="article1Id" id="article1">
+                <option {{ (page is defined and article.id == page.article1Id) ? 'selected' : '' }} value=""> Empty
                 {% for article in articles %}
                     <option {{ (page is defined and article.id == page.article1Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
                     </option>
@@ -48,6 +49,7 @@
         <div class="form-group">
             <label for="article1">Article 2</label>
             <select name="article2Id" id="article2">
+                <option {{ (page is defined and article.id == page.article2Id) ? 'selected' : '' }} value=""> Empty
                 {% for article in articles %}
                     <option {{ (page is defined and article.id == page.article2Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
                     </option>
@@ -57,6 +59,7 @@
         <div class="form-group">
             <label for="article3Id">Article 3</label>
             <select name="article3Id" id="article3Id">
+                <option {{ (page is defined and article.id == page.article3Id) ? 'selected' : '' }} value=""> Empty
                 {% for article in articles %}
                     <option {{ (page is defined and article.id == page.article3Id) ? 'selected' : '' }} value="{{ article["id"] }}">{{ article.name }}
                     </option>
@@ -66,6 +69,7 @@
         <div class="form-group">
             <label for="quiz1">Quiz 1</label>
             <select name="quiz1Id" id="quiz1">
+                <option {{ (quiz is defined and quiz.id == page.quiz1Id) ? 'selected' : '' }} value=""> Empty
                 {% for quiz in quizzes %}
                     <option {{ (quiz is defined and quiz.id == page.quiz1Id) ? 'selected' : '' }} value="{{ quiz["id"] }}">{{ quiz.question }}
                     </option>
@@ -75,6 +79,7 @@
         <div class="form-group">
             <label for="quiz2">Quiz 2</label>
             <select name="quiz2Id" id="quiz2">
+                <option {{ (quiz is defined and quiz.id == page.quiz1Id) ? 'selected' : '' }} value=""> Empty
                 {% for quiz in quizzes %}
                     <option {{ (quiz is defined and quiz.id == page.quiz2Id) ? 'selected' : '' }} value="{{ quiz["id"] }}">{{ quiz.question }}
                     </option>

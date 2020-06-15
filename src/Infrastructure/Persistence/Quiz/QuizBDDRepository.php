@@ -130,7 +130,12 @@ class QuizBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$quizId]);
             $quizInfo = $preparedSQL->fetch();
-            return new Quiz((int)$quizInfo['id'], $quizInfo['question'], $quizInfo['answer1Text'], $quizInfo['answer1State'], $quizInfo['answer2Text'], $quizInfo['answer2State'], $quizInfo['answer3Text'], $quizInfo['answer3State'], $quizInfo['answer4Text'], $quizInfo['answer4State'], $quizInfo['answerTrueText'], $quizInfo['answerFalseText']);
+            if (isset($quizInfo['id'])) {
+                return new Quiz((int)$quizInfo['id'], $quizInfo['question'], $quizInfo['answer1Text'], $quizInfo['answer1State'], $quizInfo['answer2Text'], $quizInfo['answer2State'], $quizInfo['answer3Text'], $quizInfo['answer3State'], $quizInfo['answer4Text'], $quizInfo['answer4State'], $quizInfo['answerTrueText'], $quizInfo['answerFalseText']);
+            } else {
+                return null;
+            }
+
         } catch (PDOException $e) {
             return null;
         }

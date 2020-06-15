@@ -109,7 +109,11 @@ class ArticleBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$articleId]);
             $articleInfo = $preparedSQL->fetch();
-            return new Article((int)$articleInfo["id"], $articleInfo["name"], $articleInfo["title"], $articleInfo["text"], $articleInfo["video"], $articleInfo["picture1"], $articleInfo["picture2"], $articleInfo["picture3"], $articleInfo["picture4"]);
+            if (isset($articleInfo["id"])) {
+                return new Article((int)$articleInfo["id"], $articleInfo["name"], $articleInfo["title"], $articleInfo["text"], $articleInfo["video"], $articleInfo["picture1"], $articleInfo["picture2"], $articleInfo["picture3"], $articleInfo["picture4"]);
+            } else {
+                return null;
+            }
         } catch (PDOException $e) {
             return null;
         }

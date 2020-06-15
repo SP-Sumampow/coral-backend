@@ -153,7 +153,12 @@ class UserBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$quizId]);
             $userInfo = $preparedSQL->fetch();
-            return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
+            if (isset($userInfo['id'])) {
+                return new User((int)$userInfo['id'], $userInfo['email'], $userInfo['firstname'], $userInfo['lastname'], $userInfo['picture'], $userInfo['description']);
+            } else {
+                return null;
+            }
+
         } catch (PDOException $e) {
             return null;
         }
