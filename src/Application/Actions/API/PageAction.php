@@ -46,7 +46,8 @@ class PageAction extends Action
                  "id" => 2,
                  "name" => "Introduction",
                  "picture" =>  null,
-                 "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4"
+                 "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4",
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
              );
          } else if ($coralId == 3) {
              $data = array(
@@ -54,6 +55,7 @@ class PageAction extends Action
                  "name" => "Position of corals on the maps",
                  "picture" =>  null,
                  "video" => null,
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "title" => "Visitez les récifs",
                  "text" => "Découvrez la Grande Barrière vue du ciel !",
              );
@@ -74,6 +76,7 @@ class PageAction extends Action
                  ),
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/immersive-ch1.mp4",
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "quiz1" => array(
                      "question" => "Le corail est animal, minéral ou un végétal?",
                      "answer"  => array(
@@ -157,6 +160,7 @@ class PageAction extends Action
                      ),
                      "picture" =>  null,
                      "video" => "http://167.71.55.113/assets/movies/chapter-2.mp4",
+                     "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                      "quiz1" => array(
                          "question" => "Les récifs coraliens représentent 0.2 de la surface martime, mais quel part de la biodiversité marine en %?",
                          "answer"  => array(
@@ -209,6 +213,7 @@ class PageAction extends Action
                  ),
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/bleaching%20process%20.mp4",
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "quiz" => array(
                      "question" => "Quel est la principale cause du blacnshissement des coraux?",
                      "answer"  => array(
@@ -244,6 +249,7 @@ class PageAction extends Action
                  "title" => "Le blanchiment devient régulier",
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
                      "title" => "Le phénomène de Blanchissement",
                      "text" => "Tous les coraux des mers chaudes vivant près de la surface abritent des symbiotiques microscopiques appelés les zooxanthelles.  Ce sont des algues qui utilisent les déchets métaboliques des coraux pour faire la photosynthèse. En échange d'un abri, et d'une exposition lumineuse suffisante, les zooxanthelles fournissent à leur hôte de l'oxygène, ainsi que les restes de nutriments produits n’ayant pas été consommés, dont le corail se nourrit.\r\n Or le corail, en situation de stress, peut expulser ses zooxanthelles.\r\n Les algues fournissent presque 90% de leur énergie grâce à la photosynthèse, c’est pourquoi le blanchiment mène à la mort de certaines espèces de coraux. Le phénomène a lieu en premier lieu à cause du changement de température des océans, de bactéries causant des maladies, de la pollution et de l’acidification des océans liées aux émissions de gaz à effet de serre dans l’atmosphère.\r\n Suite à un stress causé par divers facteurs, le corail ne reconnait plus la zooxanthelle comme son symbiote. Alors la symbiose entre les coraux et celle-ci s’arrêtent ce qui entrainent ainsi la perte de ces mico-algue et un blanchissement rapide de l’hôte corallien. Ce qu’on appelle le phénomène de Blanchissement !",
@@ -286,6 +292,7 @@ class PageAction extends Action
                  "title" => " Aujourd’hui, 50% sont déjà morts ...",
                  "picture" =>  null,
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
                      "title" => "Une autre concéquence",
                      "text" => "L’impact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.\r\nEn effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.\r\nPour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
@@ -329,6 +336,7 @@ class PageAction extends Action
                  "title" => "Il est encore temps d’agir...",
                  "picture" =>  null,
                  "video" => null,
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
                  "article1" => array(
                      "title" => "Richesse exceptionnelle d’un récif coralien",
                      "text" => "Pour essayer d'aider l'écosystème à continuer de fournir les services écologiques nécessaires, des méthodes très récentes sont apparues, comme la restauration écologique active. Il faut considérer ces méthodes avec prudence car de nos jours il est impossible de recréer un récif comme ceux présents naturellement. Si nous ne voulons pas perdre la richesse en biodiversité, il faut agir localement, mais surtout globalement. Limiter le réchauffement climatique à moins de 2 °C est l'urgence absolue. Chacun peut aussi agir en en parlant autour de soi, en essayant d'adopter un mode de vie plus respectueux de l'environnement et en faisant un petit geste : l'adoption d’un corail ! Il est donc important d’agir immédiatement, en sensibilisant en premier lieu les populations qui en dépendent directement.",
@@ -343,7 +351,8 @@ class PageAction extends Action
                  "title" => "Soutenez les associations",
                  "article" => "",
                  "picture" =>  null,
-                 "video" => null
+                 "video" => null,
+                 "music" => "http://167.71.55.113/assets/movies/main-song.mp3",
              );
          };
 
