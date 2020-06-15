@@ -323,7 +323,7 @@ class PageAction extends Action
                  ),
              );
          } else if ( $coralId == 9 ) {
-             array(
+             $data = array(
                  "id" => 9,
                  "name" => "what we can do",
                  "title" => "Il est encore temps d’agir...",
@@ -335,6 +335,15 @@ class PageAction extends Action
                      "picture1" => null,
                      "picture2" => null,
                  ),
+             );
+         } else if ( $coralId == 10 ) {
+             $data = array(
+                 "id" => 10,
+                 "name" => "associations",
+                 "title" => "Soutenez les associations",
+                 "article" => "",
+                 "picture" =>  null,
+                 "video" => null
              );
          };
 
