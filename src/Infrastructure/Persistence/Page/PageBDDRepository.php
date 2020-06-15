@@ -45,12 +45,12 @@ class PageBDDRepository
      * @param string|null $quiz2Id
      * @return bool
      */
-    public function addPage(string $name, string $title, string $text, string $picture, string $video, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
+    public function addPage(string $name, string $title, string $text, string $picture, string $video, string $music, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
         try {
-            $sql = "INSERT INTO Page (id, name, title, text, picture, video, quiz1_id, quiz2_id, article1_id, article2_id, article3_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            $sql = "INSERT INTO Page (id, name, title, text, picture, video, music, quiz1_id, quiz2_id, article1_id, article2_id, article3_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             $preparedSQL = $this->pdo->prepare($sql);
-            $result = $preparedSQL->execute([$name, $title, $text, $picture, $video, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id]);
+            $result = $preparedSQL->execute([$name, $title, $text, $picture, $video, $music, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id]);
             return $result;
         } catch (PDOException $e) {
             return false;
@@ -70,12 +70,12 @@ class PageBDDRepository
      * @param int|null $quizId
      * @return bool
      */
-    public function updatePage(int $id, string $name, string $title, string $text, string $picture, string $video, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
+    public function updatePage(int $id, string $name, string $title, string $text, string $picture, string $video, string $music, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
     {
         try {
-            $sql = "UPDATE Page SET name=?,title=?, text=?, picture=?,video=?,quiz1_id=?,quiz2_id=?,article1_id=?,article2_id=?,article3_id=? WHERE id=?";
+            $sql = "UPDATE Page SET name=?,title=?, text=?, picture=?,video=?, music=?, quiz1_id=?,quiz2_id=?,article1_id=?,article2_id=?,article3_id=? WHERE id=?";
             $preparedSQL = $this->pdo->prepare($sql);
-            $paramArray = [$name, $title, $text, $picture, $video, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id, $id];
+            $paramArray = [$name, $title, $text, $picture, $video, $music, $quiz1Id, $quiz2Id, $article1Id, $article2Id, $article3Id, $id];
             $preparedSQL->execute($paramArray);
             return $preparedSQL->execute($paramArray);
         } catch (PDOException $e) {
@@ -127,7 +127,7 @@ class PageBDDRepository
             $preparedSQL = $this->pdo->prepare($sql);
             $preparedSQL->execute([$pageId]);
             $pageInfo = $preparedSQL->fetch();
-            return new Page((int)$pageInfo["id"], $pageInfo["name"], $pageInfo["title"], $pageInfo["text"], $pageInfo["picture"], $pageInfo["video"], (int)$pageInfo["article1_id"], (int)$pageInfo["article2_id"], (int)$pageInfo["article3_id"], (int)$pageInfo["quiz1_id"], (int)$pageInfo["quiz2_id"]);
+            return new Page((int)$pageInfo["id"], $pageInfo["name"], $pageInfo["title"], $pageInfo["text"], $pageInfo["picture"], $pageInfo["video"], $pageInfo["music"],  (int)$pageInfo["article1_id"], (int)$pageInfo["article2_id"], (int)$pageInfo["article3_id"], (int)$pageInfo["quiz1_id"], (int)$pageInfo["quiz2_id"]);
         } catch (PDOException $e) {
             return null;
         }

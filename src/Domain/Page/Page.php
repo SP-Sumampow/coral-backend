@@ -41,6 +41,11 @@ class Page implements JsonSerializable
     public $video;
 
     /**
+     * @var string
+     */
+    public $music;
+
+    /**
      * @var ?int
      */
     public $article1Id;
@@ -66,7 +71,7 @@ class Page implements JsonSerializable
     public $quiz2Id;
 
 
-    public function __construct(int $id, string $name, string $title, string $text, string $picture, string $video, ?int $article1Id, ?int $article2Id, ?int $article3Id, ?int $quiz1Id, ?int $quiz2Id)
+    public function __construct(int $id, string $name, string $title, string $text, string $picture, string $video, string $music, ?int $article1Id, ?int $article2Id, ?int $article3Id, ?int $quiz1Id, ?int $quiz2Id)
     {
         $this->id = $id;
         $this->name = $name;
@@ -74,6 +79,7 @@ class Page implements JsonSerializable
         $this->text = $text;
         $this->picture = $picture;
         $this->video = $video;
+        $this->music = $music;
         $this->article1Id = $article1Id;
         $this->article2Id = $article2Id;
         $this->article3Id = $article3Id;
@@ -94,6 +100,7 @@ class Page implements JsonSerializable
             'text' => $this->text,
             'picture' => $this->picture,
             'video' => $this->video,
+            'music' => $this->music,
             'article1Id' => $this->article1Id,
             'article2Id' => $this->article2Id,
             'article3Id' => $this->article3Id,

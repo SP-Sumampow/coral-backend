@@ -54,6 +54,9 @@ class BackOfficePageAction extends Action
         $video = $this->request->getParsedBody()["video"];
         $hasVideo = isset($video);
 
+        $music = $this->request->getParsedBody()["music"];
+        $hasMusic = isset($music);
+
         $article1 = $this->request->getParsedBody()["article1Id"];
         $hasArticle1 = isset($article1);
 
@@ -70,7 +73,7 @@ class BackOfficePageAction extends Action
         $hasQuiz2Id = isset($quiz2Id);
 
 
-        return $hasName && $hasTitle && $hasText && $hasPicture && $hasVideo && $hasArticle1 && $hasArticle2 && $hasArticle3 && $hasQuiz1Id && $hasQuiz2Id;
+        return $hasName && $hasTitle && $hasText && $hasPicture && $hasVideo && $hasMusic && $hasArticle1 && $hasArticle2 && $hasArticle3 && $hasQuiz1Id && $hasQuiz2Id;
     }
 
     protected function action(): Response
@@ -90,13 +93,14 @@ class BackOfficePageAction extends Action
                         $text = $this->request->getParsedBody()["text"];
                         $picture = $this->request->getParsedBody()["picture"];
                         $video = $this->request->getParsedBody()["video"];
+                        $music = $this->request->getParsedBody()["music"];
                         $article1Id = $this->request->getParsedBody()["article1Id"];
                         $article2Id = $this->request->getParsedBody()["article2Id"];
                         $article3Id = $this->request->getParsedBody()["article3Id"];
                         $quiz1Id = $this->request->getParsedBody()["quiz1Id"];
                         $quiz2Id = $this->request->getParsedBody()["quiz2Id"];
 
-                        if ($this->pageBDDRepository->updatePage($pageId, $name, $title, $text, $picture, $video, $article1Id, $article2Id, $article3Id, $quiz1Id, $quiz2Id)) {
+                        if ($this->pageBDDRepository->updatePage($pageId, $name, $title, $text, $picture, $video, $music, $article1Id, $article2Id, $article3Id, $quiz1Id, $quiz2Id)) {
                             $url = "?success=Page updated";
                             return $this->response->withRedirect('/backoffice/pages' . $url, 301);
                         } else {
@@ -131,13 +135,14 @@ class BackOfficePageAction extends Action
                         $text = $this->request->getParsedBody()["text"];
                         $picture = $this->request->getParsedBody()["picture"];
                         $video = $this->request->getParsedBody()["video"];
+                        $music = $this->request->getParsedBody()["music"];
                         $article1Id = $this->request->getParsedBody()["article1Id"];
                         $article2Id = $this->request->getParsedBody()["article2Id"];
                         $article3Id = $this->request->getParsedBody()["article3Id"];
                         $quiz1Id = $this->request->getParsedBody()["quiz1Id"];
                         $quiz2Id = $this->request->getParsedBody()["quiz2Id"];
 
-                        if ($this->pageBDDRepository->addPage($name, $title, $text, $picture, $video, $article1Id, $article2Id, $article3Id, $quiz1Id, $quiz2Id)) {
+                        if ($this->pageBDDRepository->addPage($name, $title, $text, $picture, $video, $music, $article1Id, $article2Id, $article3Id, $quiz1Id, $quiz2Id)) {
                             $url = "?success=Page added";
                             return $this->response->withRedirect('/backoffice/pages' . $url, 301);
                         } else {
