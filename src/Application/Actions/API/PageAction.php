@@ -199,17 +199,17 @@ class PageAction extends Action
                  "name" => "Actual situation",
                  "title" => "Mais que se passe t-il ?",
                  "article1" => array(
-                         "name" => "pop up1",
+                         "name" => "pop up1/ id=6",
                          "title" => "Le réchauffemnt des océans",
                          "text" => "Le réchauffement des océans est le facteur principal du blanchiment des coraux. Si les tempérratures de surface des océans continuent d’augmenter, la fréquence et la gravité du blanchiment des coraux va également augmenter, affectant probablement la capacité des récifs coralliens à s’addapter et à fournir la plupart des services que nous leur demandons"
                      ),
                  "article2" => array(
-                     "name" => "pop up2",
+                     "name" => "pop up2 / id=6",
                      "title" => "L’acidification des océan",
                      "text" => "Le dioxyde de carbone présent dans l’atmosphère est absorbé par les océans. Ceci cause la baisse du pH des océans, entraînant l’acidification de ces derniers. Cette diminution du pH a des conséquences négatives, surtout pour les organismes carbonatés océaniques tels que les récifs que les récifs corallliens. "
                  ),
                  "article3" => array(
-                     "name" => "pop up3",
+                     "name" => "pop up3/ id=6",
                      "title" => "L’élévation du niveaux des océans",
                      "text" => "Les observations depuis 1961 montrent que la température moyenne des océans a augmenté, même, aux grandes profondeurs et que l’océan aa absorbé plus de 80% de la chaleur ajoutée au systeme climatique. Ce réchauffement provoque l’élévation du niveau de la mer et crée des problèmes pour les zones côtières. "
                  ),
@@ -253,6 +253,7 @@ class PageAction extends Action
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
                  "article1" => array(
+                     "name" => "pop up1/ id=7",
                      "title" => "Le phénomène de Blanchissement",
                      "text" => "Tous les coraux des mers chaudes vivant près de la surface abritent des symbiotiques microscopiques appelés les zooxanthelles.  Ce sont des algues qui utilisent les déchets métaboliques des coraux pour faire la photosynthèse. En échange d'un abri, et d'une exposition lumineuse suffisante, les zooxanthelles fournissent à leur hôte de l'oxygène, ainsi que les restes de nutriments produits n’ayant pas été consommés, dont le corail se nourrit.\r\n Or le corail, en situation de stress, peut expulser ses zooxanthelles.\r\n Les algues fournissent presque 90% de leur énergie grâce à la photosynthèse, c’est pourquoi le blanchiment mène à la mort de certaines espèces de coraux. Le phénomène a lieu en premier lieu à cause du changement de température des océans, de bactéries causant des maladies, de la pollution et de l’acidification des océans liées aux émissions de gaz à effet de serre dans l’atmosphère.\r\n Suite à un stress causé par divers facteurs, le corail ne reconnait plus la zooxanthelle comme son symbiote. Alors la symbiose entre les coraux et celle-ci s’arrêtent ce qui entrainent ainsi la perte de ces mico-algue et un blanchissement rapide de l’hôte corallien. Ce qu’on appelle le phénomène de Blanchissement !",
                      "picture" => null,
@@ -296,6 +297,7 @@ class PageAction extends Action
                  "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
                  "article1" => array(
+                     "name" => "pop up1/ id=8",
                      "title" => "Une autre concéquence",
                      "text" => "L’impact de la disparition des coraux ne se fait pas seulement resentir sur la biodiversité.\r\nEn effet, ils occupent un rôle majeure dans la protection des côtes contre les vagues, tempêtes et marrées qui sont responsable de l’érosion des litoraux.\r\nPour palier à ce manque, des millions d’euros sont inverstis mais l’mpact de ces nouvelles structures (marina, docks etc...) peuvent eux aussi à leur tour avoir un impact négatif sur les coraux survivant, les endommagents sur le long terme.",
                      "picture1" => null,
@@ -340,6 +342,7 @@ class PageAction extends Action
                  "video" => null,
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
                  "article1" => array(
+                     "name" => "pop up1/ id=9",
                      "title" => "Richesse exceptionnelle d’un récif coralien",
                      "text" => "Pour essayer d'aider l'écosystème à continuer de fournir les services écologiques nécessaires, des méthodes très récentes sont apparues, comme la restauration écologique active. Il faut considérer ces méthodes avec prudence car de nos jours il est impossible de recréer un récif comme ceux présents naturellement. Si nous ne voulons pas perdre la richesse en biodiversité, il faut agir localement, mais surtout globalement. Limiter le réchauffement climatique à moins de 2 °C est l'urgence absolue. Chacun peut aussi agir en en parlant autour de soi, en essayant d'adopter un mode de vie plus respectueux de l'environnement et en faisant un petit geste : l'adoption d’un corail ! Il est donc important d’agir immédiatement, en sensibilisant en premier lieu les populations qui en dépendent directement.",
                      "picture1" => null,
