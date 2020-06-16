@@ -42,7 +42,7 @@ class PageAction extends Action
          } else if ($coralId == 2) {
              $data = array(
                  "id" => 2,
-                 "name" => "Introduction",
+                 "name" => "Intro",
                  "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/introduction-corals.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
@@ -54,7 +54,7 @@ class PageAction extends Action
                  "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => null,
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
-                 "title" => "Visitez les récifs",
+                 "title" => "Bienvenue dans la mer de Corail ",
                  "text" => "Découvrez la Grande Barrière vue du ciel !",
              );
          } else if ($coralId == 4) {
@@ -63,14 +63,16 @@ class PageAction extends Action
                  "name" => "What is coral?",
                  "title" => "Qu'est ce qu'un corail ?",
                  "article1" => array(
-                     "name" => "pop up 1",
+                     "name" => "pop up 1/ id=4",
                      "title" => "Et si vous aviez la même vue que les poissons ? ",
                      "text" => "Au soleil couchant, un étonnant mirage se produit, un rayon vert apparaît à l’horizon. Il ne dure qu’une ou deux secondes et indique que la surface de l’eau est plus chaude que l’air.  Ces couleurs fantôme demeurent cachées à moins que l’on sache où et comment regarder. C’est exactement ce que propose de faire le moniteur de plongée Padi Colwell, il va observer les profondeurs de la Mer de Corail sous un nouvel aspect.  En plongeant avec des lumières bleues, il pourra observer le récif comme le voient les poissons.  On ne s’attend pas à cela, tout un monde caché se révèle. Filtrée par des verres jaunes, la lumière ultra-violette éclaire un univers que seul les poissons perçoivent. Elle nous plonge au cœur d’un royaume secret.  De nombreux animaux récifaux émettent des couleurs fluorescentes invisibles à nos yeux. Les ultras-violets révèlent des couleurs insoupçonnée, mais également des créatures cachées. Certains animaux sont invisibles à l’œil humain, mais visible pour les poissons.  Les coraux brillent à leur façon, ils utilisent les couleurs fluorescentes pour nourrir les algues qu’ils abritent, d’autres ont les tentacules vivement colorés à la limite du psychédélique pour attirer les proies.  De nombreux scientifiques affirment que l’on aura compris le cerveau humain avant de comprendre la Grande Barrière de Corail, une façon de dire qu’elle est trop riche pour que l’on décrypte un jour.",
+                     "video" => null,
                  ),
                  "article2" => array(
-                     "name" => "pop up 2",
+                     "name" => "pop up 2/ id=4",
                      "title" => "Animal, minéral ou végétal?",
-                     "text" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!"
+                     "text" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!",
+                     "picture" => null,
                  ),
                  "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
                  "video" => "http://167.71.55.113/assets/movies/immersive-ch1.mp4",
@@ -80,7 +82,7 @@ class PageAction extends Action
                      "answer"  => array(
                          array(
                              "name" => "answer1",
-                             "text" => "A: Végétal biensûr !",
+                             "text" => "A: Végétal bien sûr !",
                              "state" => false,
                              "quizAnswer" => array(
                                  "title" => false,
@@ -102,7 +104,7 @@ class PageAction extends Action
                              "state" => null,
                              "quizAnswer" => array(
                                  "title" => true,
-                                 "text" => "",
+                                 "text" => "Et oui! Le squlette qui protège le corail est un minéral, les polybes qui vivent à l’intérieur son des animaux et enfin les algues qui vivent à l’intérieur des polybes sont des végétaux.",
                              ),
                          ),
                          array(
@@ -153,6 +155,7 @@ class PageAction extends Action
                      "name" => "Role of the corals",
                      "title" => "Quel est leur rôle ?",
                      "article1" => array(
+                         "name" => "pop up 1/id=5",
                          "title" => "L’incroyable “Triangle de Corail”",
                          "text" => "Le Triangle de corail est l’épicentre de la biodiversité marine de la planète.  Il possède plus de biodiversité que partout ailleurs dans le monde: 76% des espèces de coraux, et 56% des poissons de récifs coralliens dans la région Indo-Pacifique.  L’épicentre de cette diversité corallienne se trouve dans la péninsule de Papouasie indonésienne. Il est fréquenté par la baleine bleue, les dauphins, les marsouins, et le dugong en voie de disparition.",
                          "video" => "http://167.71.55.113/assets/movies/rajaampat.mp4",
