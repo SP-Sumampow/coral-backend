@@ -294,7 +294,7 @@ class PageAction extends Action
                  "name" => "situation up to date",
                  "title" => " Aujourd’hui, 50% sont déjà morts ...",
                  "picture" =>  "http://167.71.55.113/assets/movies/backgroundPic.jpg",
-                 "video" => "http://167.71.55.113/assets/movies/bleaching tracks.mp4",
+                 "video" => "http://167.71.55.113/assets/movies/deathCoralsCh6.mp4",
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
                  "article1" => array(
                      "name" => "pop up1/ id=8",
