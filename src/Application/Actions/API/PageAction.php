@@ -56,6 +56,12 @@ class PageAction extends Action
                  "music" => "http://167.71.55.113/assets/movies/main-song_low.mp3",
                  "title" => "Bienvenue dans la mer de Corail ",
                  "text" => "Découvrez la Grande Barrière vue du ciel !",
+                 "article1" => array(
+                     "name" => "pop up 1/ id=3",
+                     "title" => "Et si vous aviez la même vue que les poissons ? ",
+                     "text" => "Au soleil couchant, un étonnant mirage se produit, un rayon vert apparaît à l’horizon. Il ne dure qu’une ou deux secondes et indique que la surface de l’eau est plus chaude que l’air.  Ces couleurs fantôme demeurent cachées à moins que l’on sache où et comment regarder. C’est exactement ce que propose de faire le moniteur de plongée Padi Colwell, il va observer les profondeurs de la Mer de Corail sous un nouvel aspect.  En plongeant avec des lumières bleues, il pourra observer le récif comme le voient les poissons.  On ne s’attend pas à cela, tout un monde caché se révèle. Filtrée par des verres jaunes, la lumière ultra-violette éclaire un univers que seul les poissons perçoivent. Elle nous plonge au cœur d’un royaume secret.  De nombreux animaux récifaux émettent des couleurs fluorescentes invisibles à nos yeux. Les ultras-violets révèlent des couleurs insoupçonnée, mais également des créatures cachées. Certains animaux sont invisibles à l’œil humain, mais visible pour les poissons.  Les coraux brillent à leur façon, ils utilisent les couleurs fluorescentes pour nourrir les algues qu’ils abritent, d’autres ont les tentacules vivement colorés à la limite du psychédélique pour attirer les proies.  De nombreux scientifiques affirment que l’on aura compris le cerveau humain avant de comprendre la Grande Barrière de Corail, une façon de dire qu’elle est trop riche pour que l’on décrypte un jour.",
+                     "video" => null,
+                 ),
              );
          } else if ($coralId == 4) {
              $data =  array(
@@ -63,12 +69,6 @@ class PageAction extends Action
                  "name" => "What is coral?",
                  "title" => "Qu'est ce qu'un corail ?",
                  "article1" => array(
-                     "name" => "pop up 1/ id=4",
-                     "title" => "Et si vous aviez la même vue que les poissons ? ",
-                     "text" => "Au soleil couchant, un étonnant mirage se produit, un rayon vert apparaît à l’horizon. Il ne dure qu’une ou deux secondes et indique que la surface de l’eau est plus chaude que l’air.  Ces couleurs fantôme demeurent cachées à moins que l’on sache où et comment regarder. C’est exactement ce que propose de faire le moniteur de plongée Padi Colwell, il va observer les profondeurs de la Mer de Corail sous un nouvel aspect.  En plongeant avec des lumières bleues, il pourra observer le récif comme le voient les poissons.  On ne s’attend pas à cela, tout un monde caché se révèle. Filtrée par des verres jaunes, la lumière ultra-violette éclaire un univers que seul les poissons perçoivent. Elle nous plonge au cœur d’un royaume secret.  De nombreux animaux récifaux émettent des couleurs fluorescentes invisibles à nos yeux. Les ultras-violets révèlent des couleurs insoupçonnée, mais également des créatures cachées. Certains animaux sont invisibles à l’œil humain, mais visible pour les poissons.  Les coraux brillent à leur façon, ils utilisent les couleurs fluorescentes pour nourrir les algues qu’ils abritent, d’autres ont les tentacules vivement colorés à la limite du psychédélique pour attirer les proies.  De nombreux scientifiques affirment que l’on aura compris le cerveau humain avant de comprendre la Grande Barrière de Corail, une façon de dire qu’elle est trop riche pour que l’on décrypte un jour.",
-                     "video" => null,
-                 ),
-                 "article2" => array(
                      "name" => "pop up 2/ id=4",
                      "title" => "Animal, minéral ou végétal?",
                      "text" => "Les coraux sont constitués de milliers de petits organismes appelés polybes, principalement formé d’une bouche et d’un estomac.\r\nLe squelette des polypes est constitué à l’exterieur de ses tissus et se compose de carbonate de calcium tout comme la roche calcaire.\r\nLe corail est également composé de micro algues qui vivent dans les cellules des polypes.\r\nIl est donc à la fois animal, minéral et végétale!",
