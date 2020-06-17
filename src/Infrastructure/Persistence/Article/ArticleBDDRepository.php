@@ -7,8 +7,13 @@ use App\Domain\Article\Article;
 use \PDO;
 
 
+/**
+ * Class ArticleBDDRepository
+ * @package App\Infrastructure\Persistence\Article
+ */
 class ArticleBDDRepository
 {
+
 
     /**
      * @var PDO
@@ -52,6 +57,18 @@ class ArticleBDDRepository
     }
 
 
+    /**
+     * @param int $id
+     * @param string $name
+     * @param string $title
+     * @param string $text
+     * @param string $video
+     * @param string $picture1
+     * @param string $picture2
+     * @param string $picture3
+     * @param string $picture4
+     * @return bool
+     */
     public function updateArticle(int $id, string $name, string $title, string $text, string $video, string $picture1, string $picture2, string $picture3, string $picture4): bool
     {
         try {

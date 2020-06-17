@@ -7,8 +7,16 @@ use App\Application\Actions\Action;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class BackOfficeLogoutAction
+ * @package App\Application\Actions\BackOffice
+ */
 class BackOfficeLogoutAction extends Action
 {
+    /**
+     * BackOfficeLogoutAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);

@@ -11,6 +11,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficePageDeleteAction
+ * @package App\Application\Actions\BackOffice\Pages
+ */
 class BackOfficePageDeleteAction extends Action
 {
 
@@ -19,6 +23,10 @@ class BackOfficePageDeleteAction extends Action
      */
     private $pageBDDRepository;
 
+    /**
+     * BackOfficePageDeleteAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);

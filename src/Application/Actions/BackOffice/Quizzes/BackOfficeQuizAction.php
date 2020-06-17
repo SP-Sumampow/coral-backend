@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeQuizAction
+ * @package App\Application\Actions\BackOffice\Quizzes
+ */
 class BackOfficeQuizAction extends Action
 {
     /**
@@ -16,12 +20,19 @@ class BackOfficeQuizAction extends Action
      */
     private $quizBDDRepository;
 
+    /**
+     * BackOfficeQuizAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->quizBDDRepository = new QuizBDDRepository();
         parent::__construct($logger);
     }
 
+    /**
+     * @return bool
+     */
     protected function isPostValid(): bool
     {
         $question = $this->request->getParsedBody()["question"];

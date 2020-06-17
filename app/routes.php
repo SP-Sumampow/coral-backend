@@ -28,6 +28,9 @@ use App\Application\Actions\API\Page\APIPagesAction;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
+/**
+ * @param App $app
+ */
 return function (App $app) {
 
     $app->get('/', function ($request, $response, $args) {

@@ -11,6 +11,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficePageAction
+ * @package App\Application\Actions\BackOffice\Pages
+ */
 class BackOfficePageAction extends Action
 {
 

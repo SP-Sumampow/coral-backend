@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeHomeAction
+ * @package App\Application\Actions\BackOffice
+ */
 class BackOfficeHomeAction extends Action
 {
     /**
@@ -31,9 +35,7 @@ class BackOfficeHomeAction extends Action
         $view = Twig::fromRequest($this->request);
 
         if (isset($_SESSION["userId"])) {
-            return $view->render($this->response, 'home-BackOffice.twig', [
-                'name' => "coucou"
-            ]);
+            return $view->render($this->response, 'home-BackOffice.twig', []);
         }
     }
 }

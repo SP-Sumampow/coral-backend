@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeDeleteQuizAction
+ * @package App\Application\Actions\BackOffice\Quizzes
+ */
 class BackOfficeDeleteQuizAction extends Action
 {
     /**
@@ -16,6 +20,10 @@ class BackOfficeDeleteQuizAction extends Action
      */
     private $quizBDDRepository;
 
+    /**
+     * BackOfficeDeleteQuizAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->quizBDDRepository = new QuizBDDRepository();

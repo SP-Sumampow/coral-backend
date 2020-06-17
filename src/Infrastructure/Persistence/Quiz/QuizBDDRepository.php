@@ -21,7 +21,7 @@ class QuizBDDRepository
 
 
     /**
-     * UserBDDRepository constructor.
+     * QuizBDDRepository constructor.
      */
     public function __construct()
     {
@@ -36,15 +36,15 @@ class QuizBDDRepository
     /**
      * @param string $question
      * @param string $answer1Text
-     * @param string $answer1State
+     * @param int|null $answer1State
      * @param string $answer2Text
-     * @param string $answer2State
-     * @param string $answer3Text
-     * @param string $answer3State
-     * @param string $answer4Text
-     * @param string $answer4State
-     * @param string $quizAnswerTrueText
-     * @param string $quizAnswerFalseText
+     * @param int|null $answer2State
+     * @param string|null $answer3Text
+     * @param int|null $answer3State
+     * @param string|null $answer4Text
+     * @param int|null $answer4State
+     * @param string $answerTrueText
+     * @param string $answerFalseText
      * @return bool
      */
     public function addQuiz(string $question, string $answer1Text, ?int $answer1State, string $answer2Text, ?int $answer2State, ?string $answer3Text, ?int $answer3State, ?string $answer4Text, ?int $answer4State, string $answerTrueText, string $answerFalseText): bool
@@ -60,19 +60,20 @@ class QuizBDDRepository
         }
     }
 
+
     /**
      * @param int $id
      * @param string $question
      * @param string $answer1Text
-     * @param string $answer1State
+     * @param int|null $answer1State
      * @param string $answer2Text
-     * @param string $answer2State
-     * @param string $answer3Text
-     * @param string $answer3State
-     * @param string $answer4Text
-     * @param string $answer4State
-     * @param string $quizAnswerTrueText
-     * @param string $quizAnswerFalseText
+     * @param int|null $answer2State
+     * @param string|null $answer3Text
+     * @param int|null $answer3State
+     * @param string|null $answer4Text
+     * @param int|null $answer4State
+     * @param string $answerTrueText
+     * @param string $answerFalseText
      * @return bool
      */
     public function updateQuiz(int $id, string $question, string $answer1Text, ?int $answer1State, string $answer2Text, ?int $answer2State, ?string $answer3Text, ?int $answer3State, ?string $answer4Text, ?int $answer4State, string $answerTrueText, string $answerFalseText): bool
@@ -88,6 +89,7 @@ class QuizBDDRepository
         }
     }
 
+
     /**
      * @param int $quizId
      * @return bool
@@ -102,6 +104,7 @@ class QuizBDDRepository
             return false;
         }
     }
+
 
     /**
      * @return array|null
@@ -120,8 +123,8 @@ class QuizBDDRepository
     }
 
     /**
-     * @param int $UserId
-     * @return User|null
+     * @param int $quizId
+     * @return Quiz|null
      */
     public function findQuizzById(int $quizId): ?Quiz
     {

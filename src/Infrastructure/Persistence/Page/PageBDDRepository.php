@@ -6,6 +6,7 @@ namespace App\Infrastructure\Persistence\Page;
 use App\Domain\Page\Page;
 use \PDO;
 
+
 /**
  * Class PageBDDRepository
  * @package App\Infrastructure\Persistence\Page
@@ -20,7 +21,7 @@ class PageBDDRepository
 
 
     /**
-     * UserBDDRepository constructor.
+     * PageBDDRepository constructor.
      */
     public function __construct()
     {
@@ -68,12 +69,15 @@ class PageBDDRepository
      * @param int $id
      * @param string $name
      * @param string $title
+     * @param string $text
      * @param string $picture
      * @param string $video
-     * @param int|null $article1Id
-     * @param int|null $article2Id
-     * @param int|null $quiz1Id
-     * @param int|null $quizId
+     * @param string $music
+     * @param string|null $article1Id
+     * @param string|null $article2Id
+     * @param string|null $article3Id
+     * @param string|null $quiz1Id
+     * @param string|null $quiz2Id
      * @return bool
      */
     public function updatePage(int $id, string $name, string $title, string $text, string $picture, string $video, string $music, ?string $article1Id, ?string $article2Id, ?string $article3Id, ?string $quiz1Id, ?string $quiz2Id): bool
@@ -112,6 +116,7 @@ class PageBDDRepository
         return true;
     }
 
+
     /**
      * @return array|null
      */
@@ -127,6 +132,7 @@ class PageBDDRepository
             return null;
         }
     }
+
 
     /**
      * @param int $pageId

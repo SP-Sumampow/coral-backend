@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeArticleAction
+ * @package App\Application\Actions\BackOffice\Articles
+ */
 class BackOfficeArticleAction extends Action
 {
 
@@ -17,12 +21,19 @@ class BackOfficeArticleAction extends Action
      */
     private $articleBDDRepository;
 
+    /**
+     * BackOfficeArticleAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);
         $this->articleBDDRepository = new ArticleBDDRepository();
     }
 
+    /**
+     * @return bool
+     */
     protected function isPostValid(): bool
     {
         $name = $this->request->getParsedBody()["name"];
@@ -53,6 +64,12 @@ class BackOfficeArticleAction extends Action
         return $hasName && $hasTitle && $hasText && $hasVideo && $hasPicture1 && $hasPicture2 && $hasPicture3 && $hasPicture4;
     }
 
+    /**
+     * @return Response
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     protected function action(): Response
     {
         // isUser login

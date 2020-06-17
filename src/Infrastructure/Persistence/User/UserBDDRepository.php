@@ -32,6 +32,7 @@ class UserBDDRepository
         $this->pdo = new PDO("mysql:host=" . $host . ";dbname=" . $dbName, $user, $pass);
     }
 
+
     /**
      * @param string $email
      * @param string $firstname
@@ -53,6 +54,7 @@ class UserBDDRepository
             return false;
         }
     }
+
 
     /**
      * @param int $id
@@ -86,6 +88,7 @@ class UserBDDRepository
         }
     }
 
+
     /**
      * @param int $UserId
      * @return bool
@@ -100,6 +103,7 @@ class UserBDDRepository
             return false;
         }
     }
+
 
     /**
      * @return array|null
@@ -142,7 +146,7 @@ class UserBDDRepository
     }
 
     /**
-     * @param int $UserId
+     * @param int $quizId
      * @return User|null
      */
     public function findUserById(int $quizId): ?User

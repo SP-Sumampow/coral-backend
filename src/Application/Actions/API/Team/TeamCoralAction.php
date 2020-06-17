@@ -8,6 +8,10 @@ use App\Infrastructure\Persistence\User\UserBDDRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class TeamCoralAction
+ * @package App\Application\Actions\Api\Team
+ */
 class TeamCoralAction extends Action
 {
     /**
@@ -15,6 +19,10 @@ class TeamCoralAction extends Action
      */
     private $userBDDRepository;
 
+    /**
+     * TeamCoralAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);

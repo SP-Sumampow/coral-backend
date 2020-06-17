@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeUsersAction
+ * @package App\Application\Actions\BackOffice\Users
+ */
 class BackOfficeUsersAction extends Action
 {
     /**
@@ -16,6 +20,10 @@ class BackOfficeUsersAction extends Action
      */
     private $userBDDRepository;
 
+    /**
+     * BackOfficeUsersAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->userBDDRepository = new UserBDDRepository();

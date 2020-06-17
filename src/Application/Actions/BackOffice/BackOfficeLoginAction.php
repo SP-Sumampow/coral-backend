@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeLoginAction
+ * @package App\Application\Actions\BackOffice
+ */
 class BackOfficeLoginAction extends Action
 {
     /**
@@ -16,6 +20,10 @@ class BackOfficeLoginAction extends Action
      */
     private $userBDDRepository;
 
+    /**
+     * BackOfficeLoginAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);
@@ -23,6 +31,11 @@ class BackOfficeLoginAction extends Action
     }
 
 
+    /**
+     * @param string $email
+     * @param string $password
+     * @return int|null
+     */
     protected function isLogin(string $email, string $password): ?int {
         return $this->userBDDRepository->findUserIdByEmailPassword($email, $password);
     }

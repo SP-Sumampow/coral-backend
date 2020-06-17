@@ -9,6 +9,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficeDeleteArticleAction
+ * @package App\Application\Actions\BackOffice\Articles
+ */
 class BackOfficeDeleteArticleAction extends Action
 {
 
@@ -17,6 +21,10 @@ class BackOfficeDeleteArticleAction extends Action
      */
     private $articleBDDRepository;
 
+    /**
+     * BackOfficeDeleteArticleAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);

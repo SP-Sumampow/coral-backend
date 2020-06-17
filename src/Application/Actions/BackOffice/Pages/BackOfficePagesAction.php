@@ -9,6 +9,10 @@ use App\Infrastructure\Persistence\Page\PageBDDRepository;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 
+/**
+ * Class BackOfficePagesAction
+ * @package App\Application\Actions\BackOffice\Pages
+ */
 class BackOfficePagesAction extends Action
 {
     /**
@@ -16,6 +20,10 @@ class BackOfficePagesAction extends Action
      */
     private $pageBDDRepository;
 
+    /**
+     * BackOfficePagesAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);

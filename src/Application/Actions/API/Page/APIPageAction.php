@@ -10,6 +10,10 @@ use App\Infrastructure\Persistence\Quiz\QuizBDDRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class APIPageAction
+ * @package App\Application\Actions\API\Page
+ */
 class APIPageAction extends Action
 {
     /**
@@ -27,6 +31,10 @@ class APIPageAction extends Action
      */
     private $articleBDDRepository;
 
+    /**
+     * APIPageAction constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         parent::__construct($logger);
