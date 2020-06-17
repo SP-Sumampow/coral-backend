@@ -2,6 +2,17 @@
 
 ## l'adresse publique du serveur : http://167.71.55.113/
 
+## Notre back-office :
+
+  En general, le back-office est crée pour faciliter les utilsateurs pour modifier les datas qui sont dans le base des données et sont utilisé pour iltegrer noutre web-doc savethecorals.fr.  Les utilisatuer dans ce cas sont les admins, peuvent ajouter les donées, supprimer les données et aussi changées les données.
+  
+  Les données dans le back-office sont les pages, les articles, les quiz et aussi les users.
+  
+  Pour acceder le back-office, vous avez besoin de contacter notre developpeur back-end. Une fois que vous avez d'access, vous pouvez se connecter sur le lien du back-office : http://167.71.55.113/backoffice/login?
+  
+  
+
+
 
 
 
