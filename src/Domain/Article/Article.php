@@ -92,6 +92,7 @@ class Article implements JsonSerializable
             'id' => $this->id,
             'name' => $this->name,
             'title' => $this->title,
+            'text' => $this->text,
             'video' => $this->video,
             'picture1' => $this->picture1,
             'picture2' => $this->picture2,
