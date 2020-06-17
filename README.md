@@ -1,6 +1,6 @@
 # Développement back-end et API du projet fin d'année : Save the corals
 
-## L'adresse publique du serveur : http://167.71.55.113/
+## L'adresse publique du serveur : https://api.savethecorals.fr
 
 ## Notre back-office :
 
@@ -10,7 +10,7 @@
   - Les pages
   - Les membres de l'équipe
   
-  Pour acceder le back-office, vous avez besoin de contacter notre developpeur back-end. Une fois que vous avez accès, vous pouvez vous connectez à celui-ci avec le lien du back-office : http://167.71.55.113/backoffice/login.
+  Pour acceder le back-office, vous avez besoin de contacter notre developpeur back-end. Une fois que vous avez accès, vous pouvez vous connectez à celui-ci avec le lien du back-office : https://api.savethecorals.fr/backoffice/login.
   
   Nous encryptons les mot de passes en SHA1 avec un Salt et nous utilisons les SESSION PHP pour le login.
   
@@ -32,6 +32,7 @@
   - Apache 2.4.29
   - MYSQL 5.7.23
   - PHP 7.2
+  - SSL letsencrypt
   
   Installation de PHPMYADMIN pour la configuration de la BDD
   
