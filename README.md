@@ -45,6 +45,6 @@
   
   ## Installation
   `composer install`
-  `composer start'
+  `composer start`
   
   Vous devez récupérer les variables d'environements pour configurer la connexion à la base de donnée.
