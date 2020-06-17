@@ -1,4 +1,4 @@
-# Développement back-end et API DU projet fin d'annéé : Save the corals
+# Développement back-end et API du projet fin d'année : Save the corals
 
 ## L'adresse publique du serveur : http://167.71.55.113/
 
