@@ -86,7 +86,7 @@ return function (App $app) {
 
 
     // API
-    $app->group('/api', function (Group $group) {
+    $app->group('/api2', function (Group $group) {
         $group->get('/team', TeamCoralAction::class);
         $group->get('/pages', PagesCoralAction::class);
         $group->get('/corals', ListOfCoralAction::class);
@@ -94,7 +94,7 @@ return function (App $app) {
         $group->get('/page/{id}', PageAction::class);
     });
 
-    $app->group('/api2', function (Group $group) {
+    $app->group('/api', function (Group $group) {
         $group->get('/team', TeamCoralAction::class);
         $group->get('/pages', APIPagesAction::class);
         $group->get('/page/{id}', APIPageAction::class);
